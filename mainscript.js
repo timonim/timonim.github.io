@@ -22,9 +22,5 @@ let button = document.getElementById("my-button");
 let paragraph = document.getElementById("my-paragraph");
 
 button.addEventListener("click", function() {
-  if (paragraph.classList.contains("hidden")) {
-    paragraph.classList.remove("hidden");
-  } else {
-    paragraph.classList.add("hidden");
-  }
+  paragraph.classList.toggle("hidden");
 });

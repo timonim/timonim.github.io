@@ -12,7 +12,6 @@ i {
 i:hover {
   cursor: pointer;
   background-color: lightgray;
-  transform: scale(1.1);
 }
 
 i:active {
@@ -26,38 +25,48 @@ body {
   padding: 0 8%;
   line-break: auto;
   color: #333;
+  margin-top: 3%;
 }
 
 /* Header styles */
 .header {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 1em;
-/*   padding: 12px 16px; */
-/*   background-color: #eee; */
-/*   border-radius: 5px; */
+}
+
+.header > * {
+  flex: 0 0 auto; /* Remove the fixed size of the children */
 }
 
 .header img {
-  width: 50px;
-  max-width: 16%;
+  width: 3rem;
+}
+
+.header a:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12%;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 nav i {
   padding: 10px;
-  margin: 0 0.3em;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-
-  .header img {
-    max-width: 100%;
-    display: block;
-  }
 
   .header i {
     margin: 0 0.1em;
@@ -82,9 +91,8 @@ nav i {
   flex-direction: column;
   overflow: visible;
   text-overflow: ellipsis;
-  font-size: clamp(24px, 3.5vw, 86px);
+  font-size: clamp(2em, 3.5vw, 4em);
   flex-grow: 1;
-/*   color: #222; */
 }
 
 .hero-text {
@@ -123,8 +131,16 @@ h2 {
   margin: 0 0 0.2em 0;
 }
 
-.hidden {
-  display: none;
+#my-paragraph {
+  opacity: 1;
+  max-height: 1000px;
+  transition: opacity 0.6s ease, max-height 0.6s ease;
+}
+
+#my-paragraph.hidden {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .hero-pill {

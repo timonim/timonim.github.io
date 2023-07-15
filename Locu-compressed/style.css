@@ -78,6 +78,16 @@ body, h1, h2, h3, h4, h5, h6, p, li, ul, a {
       color: #595959;
   }
   
+  h3 {
+    font-size: clamp(2rem, 3vw, 2rem);
+    color: #595959;
+}
+
+.spacer {
+  flex: 1; /* Set flex property to 1 to distribute remaining space evenly */
+  padding-top: 5%; /* Adjust the percentage value as needed */
+}
+
   .genretag {
       text-align: center;
       letter-spacing: .4px;
@@ -151,7 +161,6 @@ body, h1, h2, h3, h4, h5, h6, p, li, ul, a {
         font-size: clamp(1rem, 2vw, 1.5rem);
         line-height: 1.4em;
         width: 100rem;
-        /* padding: 1%; */
         overflow-wrap: break-word;
         word-wrap: break-word;
       }
@@ -168,11 +177,15 @@ body, h1, h2, h3, h4, h5, h6, p, li, ul, a {
         max-width: 50%;
         font-size: clamp(1rem, 2vw, 1.5rem);
     line-height: 1.4em;
-    margin: 4% 0 4% 0;
-
     }
 
     @media (max-width: 768px) {
+
+body {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
 
 .intro {
         flex-direction: column;

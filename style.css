@@ -1,5 +1,15 @@
 /* Font styles */
-body, h1, h2, h3, h4, h5, h6, p, li, ul, a {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ul,
+a {
   font-family: var(--font-sans-serif);
 }
 
@@ -21,11 +31,27 @@ i:active {
 /* Body styles */
 body {
   --font-sans-serif: DM Sans, sans-serif;
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
   padding: 0 8%;
   line-break: auto;
   color: #333;
   margin-top: 3%;
+}
+
+body {
+  opacity: 0;
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Header styles */
@@ -67,10 +93,13 @@ nav i {
 
 /* Media Queries */
 @media (max-width: 768px) {
-
   .header i {
     margin: 0 0.1em;
     font-size: 1.4em;
+  }
+
+  .header img {
+    width: 2rem;
   }
 }
 
@@ -107,7 +136,7 @@ nav i {
 .hero-bio {
   display: flex;
   align-items: start;
-  gap: 32%;
+  gap: 20%;
   overflow-wrap: break-word;
   text-align: left;
   font-size: 24px;
@@ -133,7 +162,7 @@ h2 {
 
 #my-paragraph {
   opacity: 1;
-  max-height: 1000px;
+  max-height: 1000px; /* Set a maximum height for the paragraph */
   transition: opacity 0.6s ease, max-height 0.6s ease;
 }
 
@@ -141,6 +170,7 @@ h2 {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
+  transition-delay: 0s, 0.2; /* Add a delay only for max-height transition */
 }
 
 .hero-pill {
@@ -148,16 +178,18 @@ h2 {
   align-items: center;
   margin: 0.2em 0 0 0;
   padding: 5px 28px;
-  text-align: center; /* center the text */
+  text-align: center;
   border-radius: 16px;
-  background-color: #FF9900;
-  transition: all 0.2s ease-out;
-  color: #FFF;
+  background-color: #ff9900;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  color: #fff;
 }
 
 .hero-pill.changed {
-   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    animation: pulse 0.3s ease-out; /* adds a pulse animation to the pill only when it changes */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  transform: scale(
+    1.05
+  ); /* Apply a slight scale-up transform to enhance the animation */
 }
 
 @keyframes pulse {
@@ -192,18 +224,15 @@ h2 {
 
 .btn-read-more:hover {
   background-color: lightgray;
-/*   color: #fff; */
 }
 
 .btn-read-more:active {
   background-color: orange;
-/*   color: #fff; */
 }
 
 /* Media Queries */
 
 @media screen and (max-width: 767px) {
-  
   .hero {
     flex-direction: column;
     text-align: center;
@@ -217,12 +246,12 @@ h2 {
     text-align: center;
     align-items: center;
   }
-  
-.hero-pill {
+
+  .hero-pill {
     margin: 0.5em 0;
-    font-size: clamp(1.5rem, -0.1349rem + 6.5395vw, 3rem);
+    font-size: clamp(2rem, -0.1349rem + 6.5395vw, 3rem);
   }
-  
+
   .hero-bio {
     display: flex;
     flex-direction: column-reverse;
@@ -231,16 +260,15 @@ h2 {
     font-size: 20px;
     max-width: none;
   }
-  
+
   hero-bio p {
     order: 2;
   }
-  
+
   .bio {
     align-items: center;
-/*     font-size: 32px; */
   }
-  
+
   .hero-image {
     order: 1;
     width: 70%;
@@ -252,49 +280,73 @@ h2 {
 
 /* Gallery Section */
 
+a {
+  text-decoration: none; /* Remove underline */
+  /* color: inherit; Inherit the color from the parent */
+  color: #595959;
+}
+
+a:hover {
+  color: #333;
+  font-weight: 500; /* Make the text bold on hover */
+}
+
 .works {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 1.5em;
   margin: 0 auto;
 }
 
+.works > * {
+  flex-basis: 100%;
+}
+
+@media (min-width: 769px) {
+  .works > * {
+    flex-basis: calc(100% / 3 - 20px);
+  }
+}
+
 .works img {
-  background-color: white;
   border: 2px solid lightgray;
   border-radius: 10px;
   box-sizing: border-box;
   object-fit: cover;
   width: 100%;
   height: auto;
-  object-fit: contain;
-}
-
-.works img:nth-child(n+7) {
-  display: none;
-}
-
-.project {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 30px;
-}
-
-.works img:empty {
-  background-color: #ccc;
+  aspect-ratio: 1/1;
+  transition: transform 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 .works img:hover {
-  border: 2px solid orange;
-  transition: all 0.6s ease;
+  transform: scale(1.01);
+  border-color: orange;
 }
 
-/* Media Queries */
+.works img:not(:hover) {
+  transform: scale(1);
+  border-color: lightgray;
+}
 
-@media screen and (max-width: 767px) {
-  .works {
-    grid-template-columns: 1fr;
-  }
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+footer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
 }

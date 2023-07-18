@@ -28,6 +28,14 @@ i:active {
   background-color: orange;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Body styles */
 body {
   --font-sans-serif: DM Sans, sans-serif;
@@ -162,7 +170,7 @@ h2 {
 
 #my-paragraph {
   opacity: 1;
-  max-height: 1000px; /* Set a maximum height for the paragraph */
+  max-height: 1000px;
   transition: opacity 0.6s ease, max-height 0.6s ease;
 }
 
@@ -170,9 +178,8 @@ h2 {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition-delay: 0s, 0.2; /* Add a delay only for max-height transition */
+  transition-delay: 0s, 0.2s; /* Add a delay only for max-height transition */
 }
-
 .hero-pill {
   display: inline-flex;
   align-items: center;
@@ -183,6 +190,12 @@ h2 {
   background-color: #ff9900;
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
   color: #fff;
+}
+
+@media (max-width: 767px) {
+  #my-paragraph {
+    max-height: none; /* Remove the max-height restriction on smaller screens */
+  }
 }
 
 .hero-pill.changed {

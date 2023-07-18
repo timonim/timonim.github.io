@@ -155,9 +155,51 @@
   </body>
 
   <footer>
-    <a href="../index.html">
-      <button class="go-home-button">Go to Main Page</button>
-    </a>
+    <div class="footer-buttons">
+      <!-- Go home button -->
+
+      <a href="../index.html">
+        <button class="go-home-button">Go to Main Page</button>
+      </a>
+
+      <!-- Scroll to top button -->
+
+      <button onclick="scrollToTop()" class="scroll-top-button">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+
+      <script
+        src="https://kit.fontawesome.com/your-font-awesome-kit.js"
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        function scrollToTop() {
+          const duration = 800;
+          const start = window.pageYOffset;
+          const distance = -start;
+          let currentTime = 0;
+          const increment = 20;
+
+          function animateScroll() {
+            currentTime += increment;
+            const easeProgress = easeOutQuad(currentTime / duration);
+            const scrollPosition = start + distance * easeProgress;
+            window.scrollTo(0, scrollPosition);
+
+            if (currentTime < duration) {
+              requestAnimationFrame(animateScroll);
+            }
+          }
+
+          function easeOutQuad(t) {
+            return t * (2 - t);
+          }
+
+          animateScroll();
+        }
+      </script>
+    </div>
+
     <p>Copyright &copy; 2023 Tim Portnoy</p>
   </footer>
 </html>

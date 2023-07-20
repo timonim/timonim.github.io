@@ -180,6 +180,7 @@ h2 {
   overflow: hidden;
   transition-delay: 0s, 0.2s; /* Add a delay only for max-height transition */
 }
+
 .hero-pill {
   display: inline-flex;
   align-items: center;

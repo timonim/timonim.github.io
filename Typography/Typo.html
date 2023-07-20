@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Portfolio | Tim Portnoy</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Locu-compressed/style.css" />
+    <link rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/f3c3c26187.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="../index.html">
+        <img
+          src="../images main/Logo.png"
+          alt="Logo for Tim Portnoy's design portfolio"
+        />
+      </a>
+      <nav>
+        <a href="#"><i class="far fa-envelope"></i></a>
+        <a href="https://www.instagram.com/portnoytim/"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </nav>
+    </header>
+
+    <div class="project">
+      <div class="intro">
+        <div class="genretag">Type art, Animations &amp 3D</div>
+        <h1>Typography</h1>
+        <h2>Experiments in Hebrew typography</h2>
+        <p class="description">
+          Having a strong passion for typography, I have explored the
+          versatility of Hebrew typography within different contexts and rules
+          by designing a various fonts and art with the script. The works are
+          heavily influenced by various cultural aspects, movie genres, design
+          movements, and other forms of artistic expression.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-gallery">
+      <h3>Kulmus</h3>
+
+      <div class="flex-container">
+        <div class="item1">
+          <img
+            src="Kolmus_1.webp"
+            alt="Logo for Tim Portnoy's design portfolio"
+          />
+        </div>
+        <div class="item1">
+          <img src="Kolmus_2.webp" alt="Kolmus_1" />
+        </div>
+        <div class="item1">
+          <img src="Kolmus_3.webp" alt="Kolmus_2" />
+        </div>
+      </div>
+
+      <h3>Galit</h3>
+
+      <div class="flex-container">
+        <div class="item1">
+          <img src="Galit222.jpeg" alt="Galit logotype" />
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="item1">
+          <img src="Galit11.webp" alt="Galit 1" />
+        </div>
+        <div class="item1">
+          <img src="Galit44.webp" alt="Galit 2" />
+        </div>
+        <div class="item1">
+          <img src="Galit33.webp" alt="Galit 3" />
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <h3>Experiments</h3>
+
+      <div id="flexbox">
+        <div class="column">
+          <img src="alienwp3.webp" alt="Image" />
+          <img src="alef thumb compressed.gif" alt="Image" />
+          <img
+            src="BiodegradableEllipticalBlackrussianterrier-small.gif"
+            alt="Image"
+          />
+        </div>
+
+        <div class="column">
+          <img src="Bauhaus-TA1.png" alt="Image" />
+          <img src="frog.gif" alt="Frog" />
+          <img src="Seoul.jpeg" alt="Image" />
+        </div>
+
+        <div class="column">
+          <img src="FlatCurve.gif" alt="Image" />
+          <img src="Horror.gif" alt="Image" />
+          <img src="Abstract.jpeg" alt="Image" />
+        </div>
+
+        <div class="column">
+          <img src="AlefIG3.png" alt="Image" />
+          <img src="AGACH.jpeg" alt="Image" />
+          <img
+            src="121544593_850412275698908_2975259128334770148_n.jpeg"
+            alt="Image"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <div class="footer-buttons">
+      <!-- Go home button -->
+
+      <a href="../index.html">
+        <button class="go-home-button">Go to Main Page</button>
+      </a>
+
+      <!-- Scroll to top button -->
+
+      <button onclick="scrollToTop()" class="scroll-top-button">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+
+      <script
+        src="https://kit.fontawesome.com/your-font-awesome-kit.js"
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        function scrollToTop() {
+          const duration = 800;
+          const start = window.pageYOffset;
+          const distance = -start;
+          let currentTime = 0;
+          const increment = 20;
+
+          function animateScroll() {
+            currentTime += increment;
+            const easeProgress = easeOutQuad(currentTime / duration);
+            const scrollPosition = start + distance * easeProgress;
+            window.scrollTo(0, scrollPosition);
+
+            if (currentTime < duration) {
+              requestAnimationFrame(animateScroll);
+            }
+          }
+
+          function easeOutQuad(t) {
+            return t * (2 - t);
+          }
+
+          animateScroll();
+        }
+      </script>
+    </div>
+
+    <p>Copyright &copy; 2023 Tim Portnoy</p>
+  </footer>
+</html>

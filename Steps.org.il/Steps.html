@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Portfolio | Tim Portnoy</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Locu-compressed/style.css">
+  <link rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f3c3c26187.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="header">
+    <a href="../index.html">
+<img src="../images main/Logo.png" alt="Logo for Tim Portnoy's design portfolio">
+    </a>
+    <nav>
+      <a href="#"><i class="far fa-envelope"></i></a>
+      <a href="https://www.instagram.com/portnoytim/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/"><i class="fab fa-linkedin-in"></i></a>
+    </nav>
+  </header>
+  
+   <div class="project">
+     
+  <div class="intro">
+    <div class="genretag">UI/UX, Web Design &amp Logo</div>
+    <a href="http://steps.org.il">
+    <h1>Steps.org.il</h1>
+  </a>
+     <h2>A Website for an Organization Assisting Ex-Orthodox Parents in Child Custody Cases</h2>
+     <p class="description">"Steps (Tzeadim)" is a website and branding project completed during my time as a designer at David and Yosef studio for Hillel, a well-established organization dedicated to empowering individuals who have left ultra-Orthodox communities in Israel. The website and branding were designed to support Hillel's mission of helping these individuals build meaningful, self-determined lives. Through this project, we sought to create a user-friendly website and visual identity that would help Hillel reach and connect with those in need of their services, and ultimately make a positive impact in the lives of ex-ultra-Orthodox individuals and their families.
+</p>
+    </div>
+  </div>
+  
+    <div class="project-gallery">
+  
+  <div class="flex-container">
+    <div class="item1">
+      <img src="Steps1.webp" alt="Main page">
+    </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="flex-container" style="align-items: center;  ">
+  <div class="item1" style=" display: flex; padding: 5vw; width: 80%;  ">
+    <img src="Stepslogosvg.svg" alt="Logo for Tim Portnoy's design portfolio" style="object-fit: contain; border-radius:0"
+    >
+  </div>
+  <div class="item1" id="text-with-max-width">
+    "Steps (Tzeadim)" is a program that helps ex-ultra-Orthodox parents fight for custody of their children in legal proceedings that often favor the Orthodox side. As the website designer for this program, my aim was to create a platform that would serve as a valuable resource for these parents seeking custody. The program offers guidance and support through the legal process, with a focus on ensuring the best possible outcome for tcoulhe children caught in the middle of these custody battles.
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+ <div class="flex-container">
+    <div class="item1">
+      <img src="Steps2.webp" alt="Logo for Tim Portnoy's design portfolio">
+   </div>
+    <div class="item1">
+      <img src="Steps3.webp" alt="Logo for Tim Portnoy's design portfolio">
+    </div>
+  </div>
+      
+
+  </div>
+  
+    </div>
+  
+  </body>
+
+  <footer>
+    <div class="footer-buttons">
+      <!-- Go home button -->
+
+      <a href="../index.html">
+        <button class="go-home-button">Go to Main Page</button>
+      </a>
+
+      <!-- Scroll to top button -->
+
+      <button onclick="scrollToTop()" class="scroll-top-button">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+
+      <script
+        src="https://kit.fontawesome.com/your-font-awesome-kit.js"
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        function scrollToTop() {
+          const duration = 800;
+          const start = window.pageYOffset;
+          const distance = -start;
+          let currentTime = 0;
+          const increment = 20;
+
+          function animateScroll() {
+            currentTime += increment;
+            const easeProgress = easeOutQuad(currentTime / duration);
+            const scrollPosition = start + distance * easeProgress;
+            window.scrollTo(0, scrollPosition);
+
+            if (currentTime < duration) {
+              requestAnimationFrame(animateScroll);
+            }
+          }
+
+          function easeOutQuad(t) {
+            return t * (2 - t);
+          }
+
+          animateScroll();
+        }
+      </script>
+    </div>
+
+    <p>Copyright &copy; 2023 Tim Portnoy</p>
+  </footer>
+
+</html>

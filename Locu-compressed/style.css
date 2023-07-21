@@ -118,6 +118,11 @@ h3 {
   }
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .spacer {
   flex: 1; /* Set flex property to 1 to distribute remaining space evenly */
   padding-top: 5%; /* Adjust the percentage value as needed */
@@ -199,13 +204,17 @@ video {
 .column {
   display: flex;
   flex-direction: column;
-  flex-basis: calc(
-    25% - 1.5em
-  ); /* Set the initial size to 50% minus the gap */ /* max-width: 25%; */
+  flex-basis: calc(25% - 1.5em);
   gap: 1.5em;
 }
 
 .column img {
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.column video {
   vertical-align: middle;
   width: 100%;
   border-radius: 10px;

@@ -40,7 +40,7 @@ a {
 body {
   --font-sans-serif: DM Sans, sans-serif;
   background-color: #fbfbfb;
-  padding: 0 8%;
+  padding: 0 10%;
   line-break: auto;
   color: #333;
   margin-top: 3%;
@@ -88,7 +88,7 @@ body {
 nav {
   display: flex;
   flex-wrap: nowrap;
-  gap: 12%;
+  gap: 1em;
   justify-content: flex-end;
   flex-grow: 1;
 }
@@ -139,19 +139,27 @@ nav i {
 .read-more {
   display: flex;
   flex-direction: column;
+  gap: 0.4em;
 }
 
 .hero-bio {
   display: flex;
   align-items: start;
-  gap: 20%;
+  background-color: #eee;
+  padding: clamp(1.6rem, -8.6857rem + 16.4571vw, 16rem);
+  border-radius: 10px;
   overflow-wrap: break-word;
   text-align: left;
-  font-size: 24px;
-  background-color: #eee;
-  padding: 1em;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  font-size: clamp(1rem, 0.8286rem + 0.6857vw, 1.6rem);
+  margin: 0;
+  justify-content: space-between;
+  gap: 16%;
+}
+
+.hero-bio p {
+  margin: 0;
+  max-width: 32vw;
+  line-height: 1.6em;
 }
 
 .hero-image {
@@ -170,7 +178,7 @@ h2 {
 
 #my-paragraph {
   opacity: 1;
-  max-height: 1000px;
+  max-height: 1200px;
   transition: opacity 0.6s ease, max-height 0.6s ease;
 }
 
@@ -267,18 +275,19 @@ h2 {
   }
 
   .hero-bio {
-    display: flex;
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
     font-size: 20px;
     max-width: none;
+    gap: 1em;
   }
 
-  hero-bio p {
-    order: 2;
+  .hero-bio p {
+    margin: 0;
+    max-width: 100%;
+    line-height: 1.6em;
   }
-
   .bio {
     align-items: center;
   }
@@ -309,7 +318,8 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1.5em;
+  gap: 2em;
+  row-gap: 3em;
   margin: 0 auto;
 }
 
@@ -319,7 +329,7 @@ a:hover {
 
 @media (min-width: 769px) {
   .works > * {
-    flex-basis: calc(100% / 3 - 20px);
+    flex-basis: calc(100% / 3 - 2em);
   }
 }
 
@@ -348,11 +358,11 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 .project-title {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 0.7rem + 0.8vw, 1.6rem);
   margin: 0;
 }
 
@@ -363,4 +373,10 @@ footer {
   gap: 2rem;
   align-items: center;
   flex-direction: column;
+}
+
+footer p {
+  margin-top: 3rem;
+  font-size: 1rem;
+  text-align: center;
 }

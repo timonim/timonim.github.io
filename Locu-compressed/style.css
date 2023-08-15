@@ -27,7 +27,7 @@ a {
 body {
   --font-sans-serif: DM Sans, sans-serif;
   background-color: #fbfbfb;
-  padding: 0 8%;
+  padding: 0 10%;
   line-break: auto;
   color: #333;
   margin-top: 3%;
@@ -59,7 +59,7 @@ body {
 nav {
   display: flex;
   flex-wrap: nowrap;
-  gap: 12%;
+  gap: 1em;
   justify-content: flex-end;
   flex-grow: 1;
 }
@@ -82,7 +82,7 @@ nav i:active {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .header i {
     margin: 0 0.1em;
     font-size: 1.4em;
@@ -102,7 +102,7 @@ h1 {
 
 h2 {
   margin: 0;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.4rem, 4vw, 3rem);
   color: #595959;
   max-width: 80%;
 }
@@ -110,9 +110,10 @@ h2 {
 h3 {
   font-size: clamp(2rem, 3vw, 2rem);
   color: #595959;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   h2 {
     max-width: 100%;
   }
@@ -149,14 +150,19 @@ a {
 .intro {
   display: flex;
   flex-direction: column;
-  gap: 0.1em;
+  gap: 1.5em;
   margin-top: 1em;
 }
 
-.description {
-  max-width: 50%;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+p {
+  font-size: clamp(1rem, 0.8286rem + 0.6857vw, 1.6rem);
   line-height: 1.6em;
+  margin: 0;
+}
+
+.description {
+  max-width: 40%;
+  font-size: clamp(1rem, 0.8286rem + 0.6857vw, 1.6rem);
 }
 
 img {
@@ -171,14 +177,21 @@ video {
 .project-gallery {
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
+  gap: 2em;
 }
 
 .flex-container {
   display: flex;
   flex-grow: 1;
   align-self: stretch;
-  gap: 1.5em;
+  gap: 2em;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: calc(40% - 2em);
 }
 
 .item1 {
@@ -198,14 +211,14 @@ video {
 #flexbox {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5em;
+  gap: 2em;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  flex-basis: calc(25% - 1.5em);
-  gap: 1.5em;
+  flex-basis: calc(25% - 2em);
+  gap: 2em;
 }
 
 .column img {
@@ -222,9 +235,7 @@ video {
 
 @media screen and (max-width: 800px) {
   .column {
-    flex-basis: calc(
-      50% - 1.5em
-    ); /* Set the initial size to 50% minus the gap */
+    flex-basis: calc(40% - 2em); /* Set the initial size to 40% minus the gap */
   }
 }
 
@@ -236,11 +247,28 @@ video {
 }
 
 #text-with-max-width {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  line-height: 1.4em;
-  width: 100rem;
+  font-size: clamp(1rem, 0.8286rem + 0.6857vw, 1.6rem);
+  line-height: 1.6em;
   overflow-wrap: break-word;
   word-wrap: break-word;
+}
+
+#text-with-max-width-50 {
+  max-width: calc(40% - 2em);
+  font-size: clamp(1rem, 0.8286rem + 0.6857vw, 1.6rem);
+  line-height: 1.6em;
+}
+
+#text-card {
+  max-width: calc(40% - 2em);
+  font-size: clamp(1rem, 0.8286rem + 0.6857vw, 1.6rem);
+  line-height: 1.6em;
+  padding-left: 1em;
+}
+
+.figcaption {
+  padding-top: 1rem;
+  color: #595959;
 }
 
 #logo {
@@ -251,13 +279,7 @@ video {
   height: 40vw;
 }
 
-#text-with-max-width-50 {
-  max-width: 50%;
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  line-height: 1.4em;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   body {
     flex-direction: column;
     text-align: center;
@@ -281,6 +303,10 @@ video {
     max-width: 100%;
   }
 
+  .project-header {
+    width: 100%;
+  }
+
   .genretag {
     font-size: small;
     margin: 5% 0 5% 0;
@@ -292,7 +318,8 @@ video {
   }
 
   .flex-container #text-with-max-width,
-  #text-with-max-width-50 {
+  #text-with-max-width-50,
+  #text-card {
     width: 100%;
     max-width: fit-content;
   }
@@ -305,6 +332,7 @@ footer {
   gap: 2rem;
   align-items: center;
   flex-direction: column;
+  font-size: 1em;
 }
 
 .go-home-button,
@@ -342,4 +370,10 @@ footer {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+}
+
+footer p {
+  margin-top: 3rem;
+  font-size: 1rem;
+  text-align: center;
 }

@@ -282,19 +282,11 @@ video {
   .column {
     flex-basis: 100%; /* Set the initial size to 100% */
     max-width: 100%; /* Set the maximum width to 100% */
-<<<<<<< HEAD
-    gap: 4vw;
-  }
-
-  #flexbox {
-    gap: 4vw;
-=======
     gap: 5vw;
   }
 
   #flexbox {
     gap: 5vw;
->>>>>>> 12fd66f (UI fixes 3)
   }
 }
 

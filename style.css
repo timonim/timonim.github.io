@@ -317,8 +317,8 @@ a:hover {
 .works {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 2%;
+  justify-content: space-between;
+  gap: 2vw;
   row-gap: 3em;
   margin: 0 auto;
 }
@@ -327,9 +327,9 @@ a:hover {
   flex-basis: 100%;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1000px) {
   .works > * {
-    flex-basis: calc(100% / 3 - 2%);
+    flex-basis: calc(100% / 3 - 2vw);
   }
 }
 

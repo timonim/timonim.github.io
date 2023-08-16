@@ -105,6 +105,10 @@ nav i {
     padding: 0 4%;
   }
 
+  .header img {
+    width: 2.4rem;
+  }
+
   .header i {
     margin: 0 0.1em;
     font-size: 1.4em;

@@ -83,6 +83,14 @@ nav i:active {
 
 /* Media Queries */
 @media (max-width: 1000px) {
+  body {
+    padding: 0 4%;
+  }
+
+  .header img {
+    width: 2.4rem;
+  }
+
   .header i {
     margin: 0 0.1em;
     font-size: 1.4em;
@@ -125,6 +133,12 @@ a {
   padding-top: 2vw; /* Adjust the percentage value as needed */
 }
 
+@media screen and (max-width: 1000px) {
+  .spacer {
+    padding-top: 10vw;
+  }
+}
+
 .genretag {
   text-align: center;
   letter-spacing: 0.4px;
@@ -165,6 +179,29 @@ img {
   width: 100%;
 }
 
+/* Styles for the desktop image */
+.desktop-image {
+  display: block; /* Show the image on desktop */
+}
+
+/* Styles for the mobile image */
+.mobile-image {
+  display: none; /* Hide the image on mobile */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  /* Hide the desktop image on mobile */
+  .desktop-image {
+    display: none;
+  }
+
+  /* Show the mobile image on mobile */
+  .mobile-image {
+    display: block;
+  }
+}
+
 video {
   width: 100%;
   border-radius: 10px;
@@ -173,7 +210,7 @@ video {
 .project-gallery {
   display: flex;
   flex-direction: column;
-  gap: 5vh;
+  gap: 2vw;
 }
 
 .flex-container {
@@ -233,6 +270,11 @@ video {
 @media screen and (max-width: 1000px) {
   .column {
     flex-basis: 49%; /* Set the initial size to 40% minus the gap */
+    gap: 5vw;
+  }
+
+  #flexbox {
+    gap: 5vw;
   }
 }
 
@@ -240,11 +282,19 @@ video {
   .column {
     flex-basis: 100%; /* Set the initial size to 100% */
     max-width: 100%; /* Set the maximum width to 100% */
+<<<<<<< HEAD
     gap: 4vw;
   }
 
   #flexbox {
     gap: 4vw;
+=======
+    gap: 5vw;
+  }
+
+  #flexbox {
+    gap: 5vw;
+>>>>>>> 12fd66f (UI fixes 3)
   }
 }
 
@@ -313,11 +363,20 @@ video {
     font-size: small;
     margin: 2% 0;
   }
+
+  .project-gallery {
+    gap: 5vw;
+  }
+
   .flex-container {
     flex-direction: column;
     text-align: center;
     align-items: center;
+<<<<<<< HEAD
     gap: 5vh;
+=======
+    gap: 5vw;
+>>>>>>> 12fd66f (UI fixes 3)
   }
 
   .flex-container #text-with-max-width,

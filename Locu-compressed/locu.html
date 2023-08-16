@@ -25,7 +25,9 @@
         />
       </a>
       <nav>
-        <a href="#"><i class="far fa-envelope"></i></a>
+        <a href="mailto:portnoytim@gmail.com"
+          ><i class="far fa-envelope"></i
+        ></a>
         <a href="https://www.instagram.com/portnoytim/"
           ><i class="fab fa-instagram"></i
         ></a>
@@ -60,24 +62,48 @@
       </div>
 
       <div class="flex-container">
-        <div class="item1">
+        <!-- <div class="item1">
           <img
             src="Gummy Blue.jpg"
             alt="Logo for Tim Portnoy's design portfolio"
           />
-        </div>
+        </div> -->
         <div class="item1">
-          <img
-            src="Gummy Pink.jpg"
-            alt="Logo for Tim Portnoy's design portfolio"
-          />
+          <video autoplay loop muted>
+            <source src="Locu_Anim.webm" type="video/webm" />
+            <img src="fallback.png" alt="Image fallback" />
+          </video>
         </div>
-        <div class="item1" id="text-with-max-width">
+
+        <style>
+          #text-card {
+            max-width: calc(34% - 2vw);
+          }
+
+          @media (max-width: 1000px) {
+            #text-card {
+              max-width: 100%;
+            }
+          }
+        </style>
+
+        <div class="item1" id="text-card">
           The gummy series depicts an idyllic nature scene that features
           complementary colors to the packaging. The product aims to appeal
           towards casual customers looking to enhance their nutrition with a
           tasty, daily snack.
         </div>
+
+        <style>
+          #text-card {
+            max-width: calc(34% - 2vw);
+            @media (max-width: 1000px) {
+              #text-card {
+                max-width: 100%;
+              }
+            }
+          }
+        </style>
       </div>
 
       <div class="flex-container">
@@ -87,7 +113,7 @@
         <div class="item1">
           <img src="Bar Series.jpg" />
         </div>
-        <div class="item1" id="text-with-max-width">
+        <div class="item1" id="text-card">
           The direction of the protein bar packaging features the product
           floating in a mountainous, surreal scene with rocks and boulders
           flying in the background. The product is aimed towards intermediate

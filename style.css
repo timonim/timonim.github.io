@@ -68,7 +68,7 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1em;
+  margin: 3vh 0 10vh 0;
 }
 
 .header > * {
@@ -100,14 +100,14 @@ nav i {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+  body {
+    padding: 0 4%;
+  }
+
   .header i {
     margin: 0 0.1em;
     font-size: 1.4em;
-  }
-
-  .header img {
-    width: 2rem;
   }
 }
 
@@ -189,6 +189,12 @@ h2 {
   transition-delay: 0s, 0.2s; /* Add a delay only for max-height transition */
 }
 
+@media (max-width: 1000px) {
+  #my-paragraph {
+    max-height: none; /* Remove the max-height restriction on smaller screens */
+  }
+}
+
 .hero-pill {
   display: inline-flex;
   align-items: center;
@@ -199,12 +205,6 @@ h2 {
   background-color: #ff9900;
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
   color: #fff;
-}
-
-@media (max-width: 767px) {
-  #my-paragraph {
-    max-height: none; /* Remove the max-height restriction on smaller screens */
-  }
 }
 
 .hero-pill.changed {
@@ -254,7 +254,7 @@ h2 {
 
 /* Media Queries */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1000px) {
   .hero {
     flex-direction: column;
     text-align: center;
@@ -317,8 +317,8 @@ a:hover {
 .works {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2em;
+  justify-content: flex-start;
+  gap: 2%;
   row-gap: 3em;
   margin: 0 auto;
 }
@@ -329,7 +329,7 @@ a:hover {
 
 @media (min-width: 769px) {
   .works > * {
-    flex-basis: calc(100% / 3 - 2em);
+    flex-basis: calc(100% / 3 - 2%);
   }
 }
 

@@ -364,11 +364,7 @@ video {
     flex-direction: column;
     text-align: center;
     align-items: center;
-<<<<<<< HEAD
-    gap: 5vh;
-=======
     gap: 5vw;
->>>>>>> 12fd66f (UI fixes 3)
   }
 
   .flex-container #text-with-max-width,

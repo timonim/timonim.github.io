@@ -164,17 +164,6 @@ a {
   margin-bottom: 3vh;
 }
 
-/* p {
-  font-size: clamp(0.9rem, 0.6615rem + 0.5908vw, 1.4rem);
-  line-height: 1.6em;
-  margin: 0;
-} */
-
-/* .description {
-  width: clamp(30rem, 0rem + 48vw, 60rem);
-  font-size: clamp(0.9rem, 0.6615rem + 0.5908vw, 1.4rem);
-} */
-
 img {
   width: 100%;
 }
@@ -361,7 +350,7 @@ p {
 @media (max-width: 768px) {
   .bento-box div {
     flex-basis: 50%;
-    padding: 14% 2%;
+    padding: 14% 4%;
   }
 }
 

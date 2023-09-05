@@ -10,8 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../Locu-compressed/style.css" />
-    <link rel="stylesheet" />
+    <link rel="stylesheet" href="../project-styles.css" />
     <script
       src="https://kit.fontawesome.com/f3c3c26187.js"
       crossorigin="anonymous"
@@ -20,10 +19,12 @@
 
   <body>
     <header class="header">
-      <a href="../index.html">
+      <a href="../index.html" class="logo-link">
         <img
           src="../images main/Logo.png"
           alt="Logo for Tim Portnoy's design portfolio"
+          class="logo-image"
+          id="logo"
         />
       </a>
       <nav>
@@ -38,19 +39,16 @@
         ></a>
       </nav>
     </header>
-
-    <div class="project">
-      <div class="intro">
-        <div class="genretag">Branding, 3D &amp Beer Brewing</div>
-        <h1>Beers</h1>
-        <h2>Crafting Beers and Labels</h2>
-        <p class="description">
-          Designing beer labels combines my passions for art and craft brewing.
-          I love brewing as a hobby and bringing my creative spirit to designing
-          visually pleasing labels that showcase each beer's unique character
-          and appeal.
-        </p>
-      </div>
+    <div class="intro">
+      <div class="project-tag">Branding, 3D &amp Beer Brewing</div>
+      <h1>Beers</h1>
+      <h2>Crafting Beers and Labels</h2>
+      <p class="project-description">
+        Designing beer labels combines my passions for art and craft brewing. I
+        love brewing as a hobby and bringing my creative spirit to designing
+        visually pleasing labels that showcase each beer's unique character and
+        appeal.
+      </p>
     </div>
 
     <div class="spacer"></div>
@@ -65,16 +63,16 @@
         </p>
       </div>
       <div class="flex-container">
-        <div class="item1">
+        <div class="flex-item">
           <img src="Baru-expanded.webp" alt="Baru dark" />
         </div>
       </div>
 
       <div class="flex-container">
-        <div class="item1">
+        <div class="flex-item">
           <img src="2021-11-08 19.23.23.jpg" alt="Baru day" />
         </div>
-        <div class="item1" style="position: relative">
+        <div class="flex-item" style="position: relative">
           <video
             autoplay
             loop
@@ -98,13 +96,13 @@
       </div>
 
       <div class="flex-container">
-        <div class="item1">
+        <div class="flex-item">
           <img src="2021-11-08 19.46.03.webp" />
         </div>
-        <div class="item1">
+        <div class="flex-item">
           <img src="photo_2021-12-13 12.20.28.webp" />
         </div>
-        <div class="item1">
+        <div class="flex-item">
           <img src="20210908_183347.webp" />
         </div>
       </div>
@@ -119,7 +117,7 @@
         </p>
       </div>
       <div class="flex-container">
-        <div class="item1">
+        <div class="flex-item">
           <video autoplay loop muted>
             <source src="video.mp4" type="video/mp4" />
             <source
@@ -129,57 +127,30 @@
             <img src="fallback.png" alt="Image fallback" />
           </video>
         </div>
-        <div class="item1">
+        <div class="flex-item">
           <img src="20220530_170240.webp" />
         </div>
       </div>
     </div>
+
+    <!-- Footer script -->
+    <script src="../footer.js"></script>
+
+    <!-- Tet hover script -->
+    <script src="../Logo_hover_anim.js"></script>
   </body>
 
   <footer>
     <div class="footer-buttons">
       <!-- Go home button -->
-
       <a href="../index.html">
         <button class="go-home-button">Go to Main Page</button>
       </a>
 
       <!-- Scroll to top button -->
-
       <button onclick="scrollToTop()" class="scroll-top-button">
         <i class="fas fa-arrow-up"></i>
       </button>
-
-      <script
-        src="https://kit.fontawesome.com/your-font-awesome-kit.js"
-        crossorigin="anonymous"
-      ></script>
-      <script>
-        function scrollToTop() {
-          const duration = 800;
-          const start = window.pageYOffset;
-          const distance = -start;
-          let currentTime = 0;
-          const increment = 20;
-
-          function animateScroll() {
-            currentTime += increment;
-            const easeProgress = easeOutQuad(currentTime / duration);
-            const scrollPosition = start + distance * easeProgress;
-            window.scrollTo(0, scrollPosition);
-
-            if (currentTime < duration) {
-              requestAnimationFrame(animateScroll);
-            }
-          }
-
-          function easeOutQuad(t) {
-            return t * (2 - t);
-          }
-
-          animateScroll();
-        }
-      </script>
     </div>
 
     <p style="color: #707070">

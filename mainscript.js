@@ -1,7 +1,3 @@
-// window.addEventListener('load', function() {
-//   document.body.classList.add('loaded');
-// });
-
 let heroPill = document.getElementById("hero-pill");
 let words = [
   "Products",

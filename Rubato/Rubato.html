@@ -1,128 +1,118 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Portfolio | Tim Portnoy</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="../images main/favicon.ico" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design Portfolio | Tim Portnoy</title>
-   <!-- favicon -->
-   <link rel="icon" type="image/x-icon" href="../images main/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../project-styles.css" />
+    <link rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/f3c3c26187.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../Locu-compressed/style.css">
-  <link rel="stylesheet">
-  <script src="https://kit.fontawesome.com/f3c3c26187.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <header class="header">
-    <a href="../index.html">
-<img src="../images main/Logo.png" alt="Logo for Tim Portnoy's design portfolio">
-    </a>
-    <nav>
-      <a href="mailto:portnoytim@gmail.com"><i class="far fa-envelope"></i></a>
-      <a href="https://www.instagram.com/portnoytim/"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/"><i class="fab fa-linkedin-in"></i></a>
-    </nav>
-  </header>
-  
-   <div class="project">
-     
-  <div class="intro">
-    <div class="genretag">UI/UX, Web Design &amp Logo</div>
-    <h1>Rubato</h1>
-     <h2>Hifi Audio Gear Marketplace</h2>
-     <p class="description">Rubato is an online store catering to audiophiles, offering an extensive range of high-fidelity audio equipment and accessories. The platform curates gear and clarifies their characteristics, making it effortless for customers to find the perfect pair of earphones or other equipment. Rubato's mission is to simplify the audio shopping experience by providing a user-friendly platform for an often complicated field.
-</p>
+  <body>
+    <header class="header">
+      <a href="../index.html" class="logo-link">
+        <img
+          src="../images main/Logo.png"
+          alt="Logo for Tim Portnoy's design portfolio"
+          class="logo-image"
+          id="logo"
+        />
+      </a>
+      <nav>
+        <a href="mailto:portnoytim@gmail.com"
+          ><i class="far fa-envelope"></i
+        ></a>
+        <a href="https://www.instagram.com/portnoytim/"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </nav>
+    </header>
+    <div class="intro">
+      <div class="project-tag">UI/UX, Web Design &amp Logo</div>
+      <h1>Rubato</h1>
+      <h2>Hifi Audio Gear Marketplace</h2>
+      <p class="project-description">
+        Rubato is an online store catering to audiophiles, offering an extensive
+        range of high-fidelity audio equipment and accessories. The platform
+        curates gear and clarifies their characteristics, making it effortless
+        for customers to find the perfect pair of earphones or other equipment.
+        Rubato's mission is to simplify the audio shopping experience by
+        providing a user-friendly platform for an often complicated field.
+      </p>
     </div>
-  </div>
-  
+
     <div class="project-gallery">
-  
-  <div class="flex-container">
-    <div class="item1">
-      <img src="Full Home.png" alt="Main page">
-    </div>
-</div>
-  
- <div class="flex-container">
-    <div class="item1">
-      <img src="Home.png" alt="Logo for Tim Portnoy's design portfolio">
-   </div>
-    <div class="item1">
-      <img src="Product.png" alt="Logo for Tim Portnoy's design portfolio">
-    </div>
-  </div>
-      
-  <div class="flex-container">
-    <div class="item1">
-        <img src="Mobile+Home.png">
-    </div>
-    <div class="item1">
-        <img src="Mobile+Product.png">
-    </div>
-    <div class="item1">
-      <img src="Mobile Footer.png">
-  </div>
-  </div>
+      <div class="flex-container">
+        <div class="flex-item">
+          <img src="Full Home.png" alt="Main page" />
+        </div>
+      </div>
 
-  </div>
-  
+      <div class="flex-container">
+        <div class="flex-item">
+          <img src="Home.png" alt="Logo for Tim Portnoy's design portfolio" />
+        </div>
+        <div class="flex-item">
+          <img
+            src="Product.png"
+            alt="Logo for Tim Portnoy's design portfolio"
+          />
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="flex-item">
+          <img src="Mobile+Home.png" />
+        </div>
+        <div class="flex-item">
+          <img src="Mobile+Product.png" />
+        </div>
+        <div class="flex-item">
+          <img src="Mobile Footer.png" />
+        </div>
+      </div>
     </div>
-  
+
+    <!-- Footer script -->
+    <script src="../footer.js"></script>
+
+    <!-- Tet hover script -->
+    <script src="../Logo_hover_anim.js"></script>
   </body>
 
   <footer>
     <div class="footer-buttons">
       <!-- Go home button -->
-
       <a href="../index.html">
         <button class="go-home-button">Go to Main Page</button>
       </a>
 
       <!-- Scroll to top button -->
-
       <button onclick="scrollToTop()" class="scroll-top-button">
         <i class="fas fa-arrow-up"></i>
       </button>
-
-      <script
-        src="https://kit.fontawesome.com/your-font-awesome-kit.js"
-        crossorigin="anonymous"
-      ></script>
-      <script>
-        function scrollToTop() {
-          const duration = 800;
-          const start = window.pageYOffset;
-          const distance = -start;
-          let currentTime = 0;
-          const increment = 20;
-
-          function animateScroll() {
-            currentTime += increment;
-            const easeProgress = easeOutQuad(currentTime / duration);
-            const scrollPosition = start + distance * easeProgress;
-            window.scrollTo(0, scrollPosition);
-
-            if (currentTime < duration) {
-              requestAnimationFrame(animateScroll);
-            }
-          }
-
-          function easeOutQuad(t) {
-            return t * (2 - t);
-          }
-
-          animateScroll();
-        }
-      </script>
     </div>
 
-    <p style="color: #707070;">
-      Copyright &copy; 2023<br>      Designed and programmed by Tim Portnoy
+    <p style="color: #707070">
+      Copyright &copy; 2023<br />
+      Designed and programmed by Tim Portnoy
       <a href="https://github.com/timonim/timonim.github.io">
         <i class="fa-brands fa-github fa-lg"></i>
       </a>
-          </p>  </footer>
-
+    </p>
+  </footer>
 </html>

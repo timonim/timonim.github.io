@@ -10,8 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../Locu-compressed/style.css" />
-    <link rel="stylesheet" />
+    <link rel="stylesheet" href="../project-styles.css" />
     <script
       src="https://kit.fontawesome.com/f3c3c26187.js"
       crossorigin="anonymous"
@@ -20,10 +19,12 @@
 
   <body>
     <header class="header">
-      <a href="../index.html">
+      <a href="../index.html" class="logo-link">
         <img
           src="../images main/Logo.png"
           alt="Logo for Tim Portnoy's design portfolio"
+          class="logo-image"
+          id="logo"
         />
       </a>
       <nav>
@@ -38,42 +39,39 @@
         ></a>
       </nav>
     </header>
-
-    <div class="project">
-      <div class="intro">
-        <div class="genretag">Branding, Package Design &amp 3D</div>
-        <h1>Pharmocann</h1>
-        <h2>Medical Cannabis</h2>
-        <p class="description">
-          As a designer at David and Yosef, I focused on creating and designing
-          cannabis products for Israel's leading medical cannabis company,
-          Pharmocann. My specialization included developing and re-imagining a
-          variety of products such as oils, pre-rolls, inflorescences, and even
-          the product catalog itself.
-        </p>
-      </div>
+    <div class="intro">
+      <div class="project-tag">Branding, Package Design &amp 3D</div>
+      <h1>Pharmocann</h1>
+      <h2>Medical Cannabis</h2>
+      <p class="project-description">
+        As a designer at David and Yosef, I focused on creating and designing
+        cannabis products for Israel's leading medical cannabis company,
+        Pharmocann. My specialization included developing and re-imagining a
+        variety of products such as oils, pre-rolls, inflorescences, and even
+        the product catalog itself.
+      </p>
     </div>
 
     <div class="project-gallery">
       <div class="flex-container">
-        <div class="item1">
+        <div class="flex-item">
           <img src="Jungle Box Bag.jpg" alt="Main photo jungle" />
         </div>
       </div>
 
       <div class="flex-container">
-        <div class="item1">
+        <div class="flex-item">
           <img src="Hermon28_Oil_Edited.webp" alt="Hermon Oil" />
         </div>
-        <div class="item1">
+        <div class="flex-item">
           <img src="OIl_Drip.webp" alt="Jungle Oil" />
         </div>
       </div>
 
-      <div class="spacer"></div>
+      <div class="spacer desktop-only"></div>
 
       <div class="flex-container">
-        <div class="item1" id="text-with-max-width-50">
+        <div class="flex-item" id="text-with-max-width-50">
           Adapting packaging designs to comply with printing restrictions and
           regulatory demands mandated by the governing body can be a complex
           process, especially in the highly regulated cannabis industry. The
@@ -83,10 +81,10 @@
         </div>
       </div>
 
-      <div class="spacer"></div>
+      <div class="spacer desktop-only"></div>
 
       <div class="flex-container">
-        <div class="item1">
+        <div class="flex-item">
           <img src="Jungle_Photo.webp" />
         </div>
       </div>
@@ -96,32 +94,32 @@
       <h3>Packaging Re-branding</h3>
 
       <div class="flex-container">
-        <div class="item1" id="text-with-max-width">
+        <div class="flex-item" id="text-with-max-width">
           As the lead designer for Pharmocann's rebranding project, I was
           responsible for revitalizing their existing product line to better
           appeal to a growing recreational audience. To remain competitive in a
           highly contested market, Pharmocann recognized the need to revamp
           their branding strategy, and I led the effort to achieve this goal.
         </div>
-        <div class="item1">
+        <div class="flex-item">
           <img src="Clean_Queen.webp" />
         </div>
-        <div class="item1">
+        <div class="flex-item">
           <img src="Grad_Queen.webp" />
         </div>
       </div>
 
       <div class="flex-container">
-        <div class="item1" id="text-with-max-width">
+        <div class="flex-item" id="text-with-max-width">
           The project involved careful consideration of market trends, consumer
           preferences, and brand identity. The rebranding required analysis of
           competitors and new opportunities in the market to target Pharmocann's
           rebranding efforts.
         </div>
-        <div class="item1">
+        <div class="flex-item">
           <img src="Botanic_Marimba.webp" />
         </div>
-        <div class="item1">
+        <div class="flex-item">
           <img src="Polygon_Marimba.webp" />
         </div>
       </div>
@@ -146,60 +144,30 @@
       </div>
 
       <div class="flex-container">
-        <div class="item1">
+        <div class="flex-item">
           <img src="4418_Zanim_Catalogue02.webp" />
         </div>
-        <div class="item1">
+        <div class="flex-item">
           <img src="4418_Zanim_Catalogue01.webp" />
         </div>
       </div>
     </div>
+
+    <script src="../Logo_hover_anim.js"></script>
+    <script src="../footer.js"></script>
   </body>
 
   <footer>
     <div class="footer-buttons">
       <!-- Go home button -->
-
       <a href="../index.html">
         <button class="go-home-button">Go to Main Page</button>
       </a>
 
       <!-- Scroll to top button -->
-
       <button onclick="scrollToTop()" class="scroll-top-button">
         <i class="fas fa-arrow-up"></i>
       </button>
-
-      <script
-        src="https://kit.fontawesome.com/your-font-awesome-kit.js"
-        crossorigin="anonymous"
-      ></script>
-      <script>
-        function scrollToTop() {
-          const duration = 800;
-          const start = window.pageYOffset;
-          const distance = -start;
-          let currentTime = 0;
-          const increment = 20;
-
-          function animateScroll() {
-            currentTime += increment;
-            const easeProgress = easeOutQuad(currentTime / duration);
-            const scrollPosition = start + distance * easeProgress;
-            window.scrollTo(0, scrollPosition);
-
-            if (currentTime < duration) {
-              requestAnimationFrame(animateScroll);
-            }
-          }
-
-          function easeOutQuad(t) {
-            return t * (2 - t);
-          }
-
-          animateScroll();
-        }
-      </script>
     </div>
 
     <p style="color: #707070">

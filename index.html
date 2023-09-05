@@ -19,10 +19,12 @@
 
   <body>
     <header class="header">
-      <a href="index.html">
+      <a href="index.html" class="logo-link">
         <img
-          src="https://images.squarespace-cdn.com/content/v1/622e11bec39bdb286734c00e/b08f135a-0930-4184-bfca-b9fbaa39e995/Logo.png?format=1500w"
+          src="images main/Logo.png"
           alt="Logo for Tim Portnoy's design portfolio"
+          class="logo-image"
+          id="logo"
         />
       </a>
       <nav>
@@ -42,7 +44,8 @@
       <div class="bio" id="bio">
         <h2>Hey there!</h2>
         <p class="hero-text">
-          I'm Tim Portnoy and I design <br />
+          I'm Tim Portnoy <br class="mobile-only" />
+          and I design <br />
           <span class="hero-pill" id="hero-pill">Products</span>
         </p>
         <div class="read-more">
@@ -50,11 +53,27 @@
 
           <div id="my-paragraph" class="hidden">
             <div class="hero-bio">
-              <img
-                class="hero-image"
-                src="images main/portrait.jpg"
-                alt="Hero Image"
-              />
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <img
+                      class="hero-image"
+                      id="hero-image"
+                      src="images main/portrait.jpg"
+                      alt="Front Image"
+                    />
+                  </div>
+                  <div class="card-back">
+                    <!-- Content for the back side of the card -->
+                    <img
+                      class="hero-image"
+                      id="hero-image"
+                      src="images main/portrait2.jpeg"
+                      alt="Front Image"
+                    />
+                  </div>
+                </div>
+              </div>
               <p>
                 I'm Tim Portnoy, a multidisciplinary designer based in Tel Aviv,
                 Israel. I specialize in designing visually stunning and highly
@@ -88,7 +107,18 @@
     </section>
 
     <section class="works">
-      <a href="Fanbase/Fanbase.html" class="project-link">
+      <a href="Flytrex/Flytrex.html" class="project-link">
+        <div class="project">
+          <img
+            src="Flytrex/Flytrex-cover.webp"
+            alt="Fanbase"
+            class="project-image"
+          />
+          <p class="project-title">Flytrex</p>
+        </div>
+      </a>
+
+      <a href="/Fanbase/Fanbase.html" class="project-link">
         <div class="project">
           <img
             src="Fanbase/Square Cover.jpeg"
@@ -179,15 +209,17 @@
         </div>
       </a>
     </section>
-    <footer>
-      <p style="color: #707070">
-        Copyright &copy; 2023<br />
-        Designed and programmed by Tim Portnoy
-        <a href="https://github.com/timonim/timonim.github.io">
-          <i class="fa-brands fa-github fa-lg"></i>
-        </a>
-      </p>
-    </footer>
+
+    <script src="mainscript.js"></script>
+    <script src="Logo_hover_anim.js"></script>
   </body>
-  <script src="mainscript.js"></script>
+  <footer>
+    <p style="color: #707070">
+      Copyright &copy; 2023<br />
+      Designed and programmed by Tim Portnoy
+      <a href="https://github.com/timonim/timonim.github.io">
+        <i class="fa-brands fa-github fa-lg"></i>
+      </a>
+    </p>
+  </footer>
 </html>

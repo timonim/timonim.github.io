@@ -10,7 +10,7 @@
 
   /* Flytrex Styles */
   /* --flytrex-color: #242424; */
-  --flytrex-background-image: #ffd249;
+  --flytrex-background-image: #fff2c7;
 }
 
 /* Font styles */
@@ -366,7 +366,7 @@ p {
   font-weight: 700;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -389,7 +389,7 @@ p {
 @media (max-width: 1000px) {
   .bento-box {
     flex: auto;
-    padding: 10% 6%;
+    padding: 8% 6%;
     letter-spacing: -0.5px;
   }
 }

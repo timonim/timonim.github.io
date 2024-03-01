@@ -8,11 +8,19 @@
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="../images main/favicon.ico" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
     <link rel="stylesheet" href="../project-styles.css" />
+    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" />
     <script
       src="https://kit.fontawesome.com/f3c3c26187.js"
@@ -21,27 +29,21 @@
   </head>
 
   <body>
-    <header class="header">
-      <a href="../index.html" class="logo-link">
-        <img
-          src="../images main/Logo.png"
-          alt="Logo for Tim Portnoy's design portfolio"
-          class="logo-image"
-          id="logo"
-        />
-      </a>
-      <nav>
-        <a href="mailto:portnoytim@gmail.com"
-          ><i class="far fa-envelope"></i
-        ></a>
-        <a href="https://www.instagram.com/portnoytim/"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-      </nav>
-    </header>
+   <header class="header">
+			<a href="../index.html" class="logo-link">
+				<img
+					src="../images main/Logo.png"
+					alt="Logo for Tim Portnoy's design portfolio"
+					class="logo-image"
+					id="logo"
+				/>
+			</a>
+				<a href="mailto:portnoytim@gmail.com">
+					<button class="secondary-button">
+						<span class="material-symbols-outlined"> mail </span>Let's talk
+					</button>
+				</a>
+		</header>
 
     <div class="intro">
       <div class="project-tag">UI/UX, Web Design &amp Logo</div>
@@ -116,32 +118,13 @@
       </div>
     </div>
 
-    <!-- Footer script -->
-    <script src="../footer.js"></script>
-
-    <!-- Tet hover script -->
-    <script src="../Logo_hover_anim.js"></script>
-  </body>
-
-  <footer>
-    <div class="footer-buttons">
-      <!-- Go home button -->
-      <a href="../index.html">
-        <button class="go-home-button">Go to Main Page</button>
-      </a>
-
-      <!-- Scroll to top button -->
-      <button onclick="scrollToTop()" class="scroll-top-button">
-        <i class="fas fa-arrow-up"></i>
-      </button>
-    </div>
-
-    <p style="color: #707070">
-      Copyright &copy; 2023<br />
-      Designed and programmed by Tim Portnoy
-      <a href="https://github.com/timonim/timonim.github.io">
-        <i class="fa-brands fa-github fa-lg"></i>
-      </a>
-    </p>
+    <footer>
   </footer>
+
+  <!-- Footer script -->
+<script src="../footer.js"></script>
+
+<!-- Tet hover script -->
+<script src="../Logo_hover_anim.js"></script>
+</body>
 </html>

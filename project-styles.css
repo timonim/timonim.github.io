@@ -11,6 +11,10 @@
   /* Flytrex Styles */
   /* --flytrex-color: #242424; */
   --flytrex-background-image: #fff2c7;
+
+  /* Obituary Styles */
+  --obituary-color: #936b51;
+  --obituary-background-image: linear-gradient(to top, #f5ecdf, #fff6f0);
 }
 
 /* Logo styles */
@@ -56,7 +60,7 @@ i {
 
 @media screen and (max-width: 768px) {
   .spacer {
-    padding-top: 10vw;
+    padding-top: 6vw;
   }
 }
 
@@ -66,19 +70,19 @@ i {
   width: fit-content;
 
   display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	padding: 0.5em 0.8em;
-	font-size: 1rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	border-radius: 1em;
-	background-color: #f5f5f5;
-	color: #6c757d;
-	text-decoration: none;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	transition: transform 0.2s ease-out, box-shadow 0.4s ease-out,
-		background-color 0.2s ease-out;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0.8em;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 1em;
+  background-color: #f5f5f5;
+  color: #6c757d;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-out, box-shadow 0.4s ease-out,
+    background-color 0.2s ease-out;
 }
 
 .intro {
@@ -145,6 +149,7 @@ video {
   display: flex;
   flex-direction: column;
   gap: 2vh;
+  width: 100%;
 }
 
 .flex-item {
@@ -179,7 +184,6 @@ video {
     font-size: 1rem;
     padding: 0.8rem;
   }
-  
 }
 
 /* Typo Gallery */
@@ -241,11 +245,10 @@ p {
   margin: 0;
 }
 
-#text-with-max-width-50,
-#text-left-padding,
-.project-description,
-.project-paragraph {
-  max-width: clamp(30rem, 10rem + 32vw, 50rem);
+div > p,
+h3 {
+  max-width: clamp(28rem, 10rem + 32vw, 32vw);
+  margin-bottom: 1em;
 }
 
 #text-left-padding {
@@ -255,13 +258,13 @@ p {
 /* Box styles */
 .bento-box {
   display: flex;
-  padding: 8% 4%;
-  font-size: clamp(1.2rem, -0.5391rem + 2.7826vw, 2.8rem);
-  font-weight: 700;
+  padding: 8% 8%;
+  font-size: clamp(1.2rem, -0.5391rem + 2.7826vw, 2.2rem);
+  font-weight: 800;
   text-align: center;
   border-radius: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -270,6 +273,7 @@ p {
 
 .bento-box:hover {
   transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 /* Icon styles */
@@ -291,7 +295,7 @@ p {
 /* Grid */
 .grid-container {
   display: grid;
-  grid-gap: 2vw;
+  grid-gap: 1.6vw;
 }
 
 .grid-item-large {
@@ -351,6 +355,15 @@ p {
 
 #Flytrex i {
   color: #595959;
+}
+
+#Obituary {
+  color: var(--obituary-color);
+  background-image: var(--obituary-background-image);
+}
+
+#Obituary i {
+  color: #936b51;
 }
 
 @media (max-width: 768px) {

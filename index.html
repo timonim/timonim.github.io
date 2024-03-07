@@ -1,272 +1,281 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="robots" content="noindex" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Design Portfolio | Tim Portnoy</title>
-		<!-- favicon -->
-		<link rel="icon" type="image/x-icon" href="images main/favicon.ico" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Portfolio | Tim Portnoy</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images main/favicon.ico" />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-			rel="stylesheet"
-		/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
 
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-		/>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
-		<link rel="stylesheet" href="style.css" />
-		<script
-			src="https://kit.fontawesome.com/f3c3c26187.js"
-			crossorigin="anonymous"
-		></script>
-	</head>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/f3c3c26187.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-	<body>
-		<header class="header">
-			<a href="index.html" class="logo-link">
-				<img
-					src="images main/Logo.png"
-					alt="Logo for Tim Portnoy's design portfolio"
-					class="logo-image"
-					id="logo"
-				/>
-			</a>
-				<a href="mailto:portnoytim@gmail.com">
-					<button class="secondary-button">
-						<span class="material-symbols-outlined"> mail </span>Let's talk
-					</button>
-				</a>
-		</header>
+  <body>
+    <header class="header">
+      <a href="index.html" class="logo-link">
+        <img
+          src="images main/Logo.png"
+          alt="Logo for Tim Portnoy's design portfolio"
+          class="logo-image"
+          id="logo"
+        />
+      </a>
+      <a href="mailto:portnoytim@gmail.com">
+        <button class="secondary-button">
+          <span class="material-symbols-outlined"> mail </span>Let's talk
+        </button>
+      </a>
+    </header>
 
-		<section class="hero">
-			<p class="hero-text">
-				I'm Tim Portnoy
-				<br />
-				and I <span style="color: #ff9900">design</span>
-			</p>
+    <section class="hero">
+      <p class="hero-text">
+        I'm Tim Portnoy
+        <br />
+        and I <span style="color: #ff9900">design</span>
+      </p>
 
-			<div class="skill-container">
-				<div class="skill-badge">Products</div>
-				<div class="skill-badge">UI/UX</div>
-				<div class="skill-badge">Web</div>
-				<div class="skill-badge">Apps</div>
-				<div class="skill-badge">Marketing</div>
-				<div class="skill-badge">Branding</div>
-				<div class="skill-badge">Packaging</div>
-				<div class="skill-badge">3D Art</div>
-				<div class="skill-badge">Art Direction</div>
-				<div class="skill-badge">Social</div>
-				<div class="skill-badge">AI Art</div>
-			</div>
-			<div class="read-more">
-				<button id="my-button" class="main-button">More about me</button>
+      <!-- <div class="skill-container">
+        <div class="skill-badge">Products</div>
+        <div class="skill-badge">UI/UX</div>
+        <div class="skill-badge">Web</div>
+        <div class="skill-badge">Apps</div>
+        <div class="skill-badge">Marketing</div>
+        <div class="skill-badge">Branding</div>
+        <div class="skill-badge">Packaging</div>
+        <div class="skill-badge">3D Art</div>
+        <div class="skill-badge">Art Direction</div>
+        <div class="skill-badge">Social</div>
+        <div class="skill-badge">AI Art</div>
+      </div> -->
+      <div class="read-more">
+        <button id="my-button" class="main-button">
+          <span class="material-symbols-outlined"> mood </span>
+          More about me
+        </button>
 
-				<div id="my-paragraph" class="hidden">
-					<div class="hero-bio">
+        <div id="my-paragraph" class="hidden">
+          <div class="hero-bio">
+            <section class="portrait-container">
+              <div class="portrait-image">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <img
+                      class="hero-image"
+                      id="hero-image"
+                      src="images main/portrait.jpg"
+                      alt="Front Image"
+                    />
+                  </div>
 
-						<section class="portrait-container">
-						<div class=portrait-image>
-							<div class="card-inner">
-								<div class="card-front">
-									<img
-										class="hero-image"
-										id="hero-image"
-										src="images main/portrait.jpg"
-										alt="Front Image"
-									/>
-								</div>
+                  <div class="card-back">
+                    <!-- Content for the back side of the card -->
+                    <img
+                      class="hero-image"
+                      id="hero-image"
+                      src="images main/portrait2.jpeg"
+                      alt="Front Image"
+                    />
+                  </div>
+                </div>
+              </div>
 
-								<div class="card-back">
-									<!-- Content for the back side of the card -->
-									<img
-										class="hero-image"
-										id="hero-image"
-										src="images main/portrait2.jpeg"
-										alt="Front Image"
-									/>
-								</div>
-							</div>
-						</div>
+              <section class="button-container">
+                <a href="https://www.instagram.com/portnoytim/"
+                  ><div class="tertiary-button">Instagram</div></a
+                >
 
-						<section class="button-container">
+                <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/">
+                  <div class="tertiary-button">Linkedin</div>
+                </a>
+              </section>
+            </section>
+            <section class="bio-container">
+              <p>
+                I'm Tim Portnoy, a multidisciplinary designer based in Tel Aviv,
+                Israel. I specialize in designing visually stunning and highly
+                functional solutions, particularly for complex products and
+                design systems.
+                <br /><br />
+                My skills include UI/UX, brand design, typography, AI image
+                generation, marketing, graphic design, and 3D, and I use tools
+                like Figma, Stable Diffusion, Blender, Illustrator, Indesign,
+                Photoshop, Procreate, and more.
+                <br /><br />
 
-							<a href="https://www.instagram.com/portnoytim/"
-								><div class="tertiary-button">
-									Instagram
-								</div></a
-							>
+                I love creating designs that solve problems and impress. Whether
+                it’s an app, a brand, or something else, I tailor my designs to
+                be functional and beautiful for every project.
+                <br /><br />
 
-							<a href="https://www.linkedin.com/in/tim-portnoy-b28372228/">
-								<div class="tertiary-button">
-									Linkedin
-								</div>
-							</a>
-						</section>
+                Asides design, I love languages, jazz and history podcasts.
+              </p>
+              <br />
 
-						</section>
-						<section class="bio-container">
-						<p>
-							I'm Tim Portnoy, a multidisciplinary designer based in Tel Aviv,
-							Israel. I specialize in designing visually stunning and highly
-							functional solutions, particularly for complex products and design
-							systems.
-							<br /><br />
-							My skills include UI/UX, brand design, typography, AI image
-							generation, marketing, graphic design, and 3D, and I use tools
-							like Figma, Stable Diffusion, Blender, Illustrator, Indesign,
-							Photoshop, Procreate, and more.
-							<br /><br />
+              <section class="button-container">
+                <a href="mailto:portnoytim@gmail.com">
+                  <button class="secondary-button">
+                    <span class="material-symbols-outlined"> mail </span>Let's
+                    talk
+                  </button>
+                </a>
 
-							I love creating designs that solve problems and impress. Whether
-							it’s an app, a brand, or something else, I tailor my designs to be
-							functional and beautiful for every project.
-							<br /><br />
+                <a
+                  href="images main/Tim-Portnoy-Resume-Jan.pdf"
+                  style="color: #ff9900; text-decoration: underline"
+                  ><button class="tertiary-button">
+                    <span class="material-symbols-outlined"> description </span>
+                    <span>My Resume</span>
+                  </button></a
+                >
+              </section>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-							Asides design, I love languages, jazz and history podcasts.
-						</p> <br />
+    <section class="works">
+      <a href="Flytrex/Flytrex.html" class="project-link">
+        <div class="project">
+          <img
+            src="Flytrex/Flytrex-cover.webp"
+            alt="Fanbase"
+            class="project-image"
+          />
+          <p class="project-title">Flytrex</p>
+        </div>
+      </a>
 
-<section class="button-container">
-							<a href="mailto:portnoytim@gmail.com">
-								<button class="secondary-button">
-									<span class="material-symbols-outlined"> mail </span>Let's
-									talk
-								</button>
-							</a>
+      <a href="/Fanbase/Fanbase.html" class="project-link">
+        <div class="project">
+          <img
+            src="Fanbase/Square Cover.jpeg"
+            alt="Fanbase"
+            class="project-image"
+          />
+          <p class="project-title">Fanbase</p>
+        </div>
+      </a>
 
-							<a
-								href="images main/Tim-Portnoy-Resume-Jan.pdf"
-								style="color: #ff9900; text-decoration: underline"
-								><button class="tertiary-button">
-									<span class="material-symbols-outlined"> description </span>
-									<span>My Resume</span>
-								</button></a
-							> </section>
-						</section>
-					</div>
-				</div>
-			</div>
-		</section>
+      <a href="/Obituary/Obituary.html" class="project-link">
+        <div class="project">
+          <img
+            src="Obituary/Obituary_cover.webp"
+            alt="Fanbase"
+            class="project-image"
+          />
+          <p class="project-title">Obituary Generator</p>
+        </div>
+      </a>
 
-		<section class="works">
-			<a href="Flytrex/Flytrex.html" class="project-link">
-				<div class="project">
-					<img
-						src="Flytrex/Flytrex-cover.webp"
-						alt="Fanbase"
-						class="project-image"
-					/>
-					<p class="project-title">Flytrex</p>
-				</div>
-			</a>
+      <a href="Rubato/Rubato.html" class="project-link">
+        <div class="project">
+          <img src="Rubato/Home-1.png" alt="Rubato" class="project-image" />
+          <p class="project-title">Rubato</p>
+        </div>
+      </a>
 
-			<a href="/Fanbase/Fanbase.html" class="project-link">
-				<div class="project">
-					<img
-						src="Fanbase/Square Cover.jpeg"
-						alt="Fanbase"
-						class="project-image"
-					/>
-					<p class="project-title">Fanbase</p>
-				</div>
-			</a>
+      <a href="Steps.org.il/Steps.html" class="project-link">
+        <div class="project">
+          <img
+            src="Steps.org.il/Tzeadim logo.png"
+            alt="Steps"
+            class="project-image"
+          />
+          <p class="project-title">Steps.org.il</p>
+        </div>
+      </a>
 
-			<a href="Rubato/Rubato.html" class="project-link">
-				<div class="project">
-					<img src="Rubato/Home-1.png" alt="Rubato" class="project-image" />
-					<p class="project-title">Rubato</p>
-				</div>
-			</a>
+      <a href="Locu-compressed/locu.html" class="project-link">
+        <div class="project">
+          <img
+            src="Locu-compressed/Gummy Pink.webp"
+            alt="Locu"
+            class="project-image"
+          />
+          <p class="project-title">Locu</p>
+        </div>
+      </a>
 
-<a href="Steps.org.il/Steps.html" class="project-link">
-				<div class="project">
-					<img
-						src="Steps.org.il/Tzeadim logo.png"
-						alt="Steps"
-						class="project-image"
-					/>
-					<p class="project-title">Steps.org.il</p>
-				</div>
-			</a>
+      <a href="Pharmocann/Pharmocann.html" class="project-link">
+        <div class="project">
+          <img
+            src="Pharmocann/Hermon 20 Oil cover.webp"
+            alt="Pharmocann"
+            class="project-image"
+          />
+          <p class="project-title">Pharmocann</p>
+        </div>
+      </a>
 
-			<a href="Locu-compressed/locu.html" class="project-link">
-				<div class="project">
-					<img
-						src="Locu-compressed/Gummy Pink.webp"
-						alt="Locu"
-						class="project-image"
-					/>
-					<p class="project-title">Locu</p>
-				</div>
-			</a>
-
-			<a href="Pharmocann/Pharmocann.html" class="project-link">
-				<div class="project">
-					<img
-						src="Pharmocann/Hermon 20 Oil cover.webp"
-						alt="Pharmocann"
-						class="project-image"
-					/>
-					<p class="project-title">Pharmocann</p>
-				</div>
-			</a>
-
-			<a href="Beers/Beers.html" class="project-link">
-				<div class="project">
-					<img
-						src="Beers/Baru-expanded.webp"
-						alt="Beers"
-						class="project-image"
-					/>
-					<p class="project-title">Beers</p>
-				</div>
-			</a>
-			<a href="Nebula Trollz/Trollz.html" class="project-link">
+      <a href="Beers/Beers.html" class="project-link">
+        <div class="project">
+          <img
+            src="Beers/Baru-expanded.webp"
+            alt="Beers"
+            class="project-image"
+          />
+          <p class="project-title">Beers</p>
+        </div>
+      </a>
+      <!-- <a href="Nebula Trollz/Trollz.html" class="project-link">
 				<div class="project">
 					<img src="Nebula Trollz/Tim.png" alt="Trollz" class="project-image" />
 					<p class="project-title">Nebula Trollz</p>
 				</div>
-			</a>
+			</a> -->
 
-			<a href="Typography/Typo.html" class="project-link">
-				<div class="project">
-					<img
-						src="Typography/Kolmus_2.webp"
-						alt="Typo"
-						class="project-image"
-					/>
-					<p class="project-title">Typography</p>
-				</div>
-			</a>
+      <a href="Typography/Typo.html" class="project-link">
+        <div class="project">
+          <img
+            src="Typography/Kolmus_2.webp"
+            alt="Typo"
+            class="project-image"
+          />
+          <p class="project-title">Typography</p>
+        </div>
+      </a>
 
-			<a href="https://www.instagram.com/portnoytim/" class="project-link">
-				<div class="project">
-					<img
-						src="images main/BingVista.jpeg"
-						alt="More"
-						class="project-image"
-					/>
+      <a href="https://www.instagram.com/portnoytim/" class="project-link">
+        <div class="project">
+          <img
+            src="images main/BingVista.jpeg"
+            alt="More"
+            class="project-image"
+          />
 
-					<p class="project-title">And many more projects!</p>
-				</div>
-			</a>
-		</section>
+          <p class="project-title">And many more projects!</p>
+        </div>
+      </a>
+    </section>
 
-		<script src="mainscript.js"></script>
-		<script src="Logo_hover_anim.js"></script>
-	</body>
-	<footer>
-		<p style="color: #707070">
-			Copyright &copy; 2023<br />
-			Designed and programmed by Tim Portnoy
-			<a href="https://github.com/timonim/timonim.github.io">
-				<i class="fa-brands fa-github fa-lg"></i>
-			</a>
-		</p>
-	</footer>
+    <script src="mainscript.js"></script>
+    <script src="Logo_hover_anim.js"></script>
+  </body>
+  <footer>
+    <p style="color: #707070">
+      Copyright &copy; 2023<br />
+      Designed and programmed by Tim Portnoy
+      <a href="https://github.com/timonim/timonim.github.io">
+        <i class="fa-brands fa-github fa-lg"></i>
+      </a>
+    </p>
+  </footer>
 </html>

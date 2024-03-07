@@ -32,12 +32,12 @@ Designed and programmed by Tim Portnoy
 `;
 
 // Check if the footer element exists
-const footerElement = document.querySelector('footer');
+const footerElement = document.querySelector("footer");
 if (footerElement) {
   footerElement.innerHTML = footerContent;
 } else {
   // If the footer element does not exist, create a new one and append it to the body
-  const newFooter = document.createElement('footer');
+  const newFooter = document.createElement("footer");
   newFooter.innerHTML = footerContent;
   document.body.appendChild(newFooter);
 }

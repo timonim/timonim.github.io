@@ -15,6 +15,10 @@
   /* Obituary Styles */
   --obituary-color: #936b51;
   --obituary-background-image: linear-gradient(to top, #f5ecdf, #fff6f0);
+
+  /* Rubato Styles */
+  --rubato-color: #a963ff;
+  --rubato-background-image: linear-gradient(to top, #ebe2f7, #fbf0ff);
 }
 
 /* Logo styles */
@@ -47,11 +51,6 @@ i {
 }
 
 /* Project styles */
-
-/* a {
-  text-decoration: none;
-  color: inherit;
-} */
 
 .project-tag {
   text-align: center;
@@ -130,13 +129,13 @@ video {
   display: flex;
   flex-grow: 1;
   align-self: stretch;
-  gap: 2vw;
+  gap: 1.8vw;
 }
 
 .flex-container-column {
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  gap: 1.8vh;
   width: 100%;
 }
 
@@ -245,12 +244,6 @@ p {
   align-items: left;
   justify-content: center;
 }
-
-/* @media screen and (max-width: 1000px) {
-  .project-container {
-    padding: 8% 8%;
-  }
-} */
 
 #text-left-padding {
   padding-left: 1%;
@@ -370,6 +363,15 @@ p {
 
 #Obituary i {
   color: #936b51;
+}
+
+#Rubato {
+  color: var(--rubato-color);
+  background-image: var(--rubato-background-image);
+}
+
+#Rubato i {
+  color: #a963ff;
 }
 
 @media (max-width: 1000px) {

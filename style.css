@@ -419,21 +419,25 @@ h3 {
 }
 
 /* Styling for buttons */
-
 .main-button,
 .secondary-button,
 .tertiary-button {
   display: inline-flex;
   gap: 0.5em;
   font-family: "DM Sans", sans-serif;
+  font-weight: 500;
   text-align: center;
   border: none;
   border-radius: 24px;
+  height: 3rem;
   transition: all 0.2s ease;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-button {
@@ -458,18 +462,35 @@ h3 {
   color: #f4f4f4;
 }
 
-/* Styling for secondary buttons */
+.main-button::before,
+.secondary-button::before,
+.tertiary-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.main-button:focus::before,
+.secondary-button:focus::before,
+.tertiary-button:focus::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
 
 .secondary-button {
   padding: 0.5em 1em;
-  height: 40px;
   background-color: transparent;
   color: #333;
-  border: 1.5px solid rgba(255, 153, 0, 0.7);
+  border: 2px solid rgba(255, 153, 0, 0.7);
   font-size: 1.1rem;
-  font-weight: 500;
-  transition: background-color 0.2s ease-out, color 0.2s ease-out,
-    border-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 .secondary-button:hover {
@@ -480,11 +501,9 @@ h3 {
 .tertiary-button {
   display: inline-flex;
   font-family: DM Sans, sans-serif;
-  font-weight: 500;
   align-items: center;
   justify-content: center;
   padding: 0.5em 1em;
-  height: 40px;
   background-color: transparent;
   color: #e68a00;
   border: none;

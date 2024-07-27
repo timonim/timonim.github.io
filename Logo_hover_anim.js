@@ -6,19 +6,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const THRESHOLD = 15; // Adjust the threshold value for faster reaction time
 
   function handleHover(e) {
-    const { clientX, clientY, currentTarget } = e;
-    const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
+    // Check if the browser is Firefox
+    if (navigator.userAgent.indexOf("Firefox") === -1) {
+      const { clientX, clientY, currentTarget } = e;
+      const { clientWidth, clientHeight, offsetLeft, offsetTop } =
+        currentTarget;
 
-    // Calculate the horizontal and vertical position relative to the element
-    const horizontal = (clientX - offsetLeft) / clientWidth;
-    const vertical = (clientY - offsetTop) / clientHeight;
+      // Calculate the horizontal and vertical position relative to the element
+      const horizontal = (clientX - offsetLeft) / clientWidth;
+      const vertical = (clientY - offsetTop) / clientHeight;
 
-    // Calculate the rotation angles based on the position
-    const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
-    const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
+      // Calculate the rotation angles based on the position
+      const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
+      const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
 
-    // Apply the transform style with the rotation angles
-    logo.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
+      // Apply the transform style with the rotation angles
+      logo.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
+    }
   }
 
   function resetStyles(e) {

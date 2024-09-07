@@ -10,14 +10,15 @@
 
   /* Flytrex Styles */
   /* --flytrex-color: #242424; */
+  --flytrex-color: #595959;
   --flytrex-background-image: #fff2c7;
 
   /* Obituary Styles */
-  --obituary-color: #936b51;
+  --obituary-color: #855b42;
   --obituary-background-image: linear-gradient(to top, #f5ecdf, #fff6f0);
 
   /* Rubato Styles */
-  --rubato-color: #a963ff;
+  --rubato-color: #9c5beb;
   --rubato-background-image: linear-gradient(to top, #ebe2f7, #fbf0ff);
 }
 
@@ -39,7 +40,7 @@ i {
 }
 
 /* Media Queries */
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .header img {
     width: 2.4rem;
   }
@@ -51,26 +52,6 @@ i {
 }
 
 /* Project styles */
-
-.project-tag {
-  text-align: center;
-  font-size: 16px;
-  width: fit-content;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5em 0.8em;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 1em;
-  background-color: #f4f4f4;
-  color: #6c757d;
-  text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-out, box-shadow 0.4s ease-out,
-    background-color 0.2s ease-out;
-}
 
 .intro {
   display: flex;
@@ -94,7 +75,7 @@ img {
 }
 
 /* Media query for mobile devices */
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   /* Hide the desktop image on mobile */
   .desktop-image {
     display: none;
@@ -129,7 +110,7 @@ video {
   display: flex;
   flex-grow: 1;
   align-self: stretch;
-  gap: 1.8vw;
+  gap: 2.8vw;
 }
 
 .flex-container-column {
@@ -166,7 +147,7 @@ video {
   color: #595959;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
   .figcaption {
     font-size: 1rem;
     padding: 0.8rem;
@@ -195,7 +176,7 @@ video {
   border-radius: 16px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
   .column-gallery-flex {
     flex-basis: 49%; /* Set the initial size to 40% minus the gap */
     gap: 5vw;
@@ -206,7 +187,7 @@ video {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .column-gallery-flex {
     flex-basis: 100%; /* Set the initial size to 100% */
     max-width: 100%; /* Set the maximum width to 100% */
@@ -254,10 +235,12 @@ p {
   display: flex;
   padding: 8% 8%;
   font-size: clamp(1.2rem, -0.5391rem + 2.7826vw, 2.2rem);
-  font-weight: 800;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.6px;
   text-align: center;
   border-radius: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-elevation-low);
   transition: transform 0.1s ease;
   display: flex;
   flex-direction: column;
@@ -273,7 +256,7 @@ p {
 }
 
 /* Responsive styles */
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .bento-box {
     flex: auto;
     padding: 8% 6%;
@@ -301,7 +284,7 @@ p {
   border-radius: 16px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(1, 1fr) !important;
     grid-gap: 4vw;
@@ -339,7 +322,7 @@ p {
 }
 
 #Spotify i {
-  color: #65d46e;
+  color: var(--spotify-color);
 }
 
 #Flytrex-grid {
@@ -353,7 +336,7 @@ p {
 }
 
 #Flytrex i {
-  color: #595959;
+  color: var(--flytrex-color);
 }
 
 #Obituary {
@@ -362,7 +345,7 @@ p {
 }
 
 #Obituary i {
-  color: #936b51;
+  color: var(--obituary-color);
 }
 
 #Rubato {
@@ -371,10 +354,10 @@ p {
 }
 
 #Rubato i {
-  color: #a963ff;
+  color: var(--rubato-color);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   #text-with-max-width,
   #text-with-max-width-50,
   #text-left-padding,
@@ -405,7 +388,7 @@ p {
   height: 40vw;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   #logo_brand img {
     height: 100%;
   }
@@ -413,7 +396,7 @@ p {
 
 /* Mobile */
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   body {
     flex-direction: column;
     text-align: center;
@@ -439,10 +422,6 @@ p {
 
   .flex-container-column {
     width: 100%;
-  }
-
-  .project-tag {
-    font-size: 0.8em;
   }
 
   .project-gallery,

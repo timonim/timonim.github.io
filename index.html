@@ -48,26 +48,13 @@
 
     <section class="hero">
       <p class="hero-text">
-        I'm Tim Portnoy
+        I'm Tim Portnoy,
         <br />
-        and I <span style="color: #ff9900">design products</span>
+        <span style="color: #ff9900">product designer</span>
       </p>
 
-      <!-- <div class="skill-container">
-        <div class="skill-badge">Products</div>
-        <div class="skill-badge">UI/UX</div>
-        <div class="skill-badge">Web</div>
-        <div class="skill-badge">Apps</div>
-        <div class="skill-badge">Marketing</div>
-        <div class="skill-badge">Branding</div>
-        <div class="skill-badge">Packaging</div>
-        <div class="skill-badge">3D Art</div>
-        <div class="skill-badge">Art Direction</div>
-        <div class="skill-badge">Social</div>
-        <div class="skill-badge">AI Art</div>
-      </div> -->
       <div class="read-more">
-        <button id="my-button" class="main-button">
+        <button id="my-button" class="main-button" style="animation-delay: 0.8s">
           <span class="material-symbols-outlined"> mood </span>
           More about me
         </button>
@@ -155,55 +142,78 @@
 
     <section class="works">
       <a href="Flytrex/Flytrex.html" class="project-link">
-        <div class="project">
+        <div class="project" id="flytrex-project">
           <img
             src="Flytrex/Flytrex-cover.webp"
             alt="Fanbase"
             class="project-image"
           />
-          <p class="project-title">Flytrex</p>
+          <div class="project-title">
+          <p class="project-header">Flytrex</p>
+          <p class="project-sub">Elevating User Experience: Multi-Platform UI/UX Design for Flytrex's Drone Delivery Ecosystem</p>
+        </div>
         </div>
       </a>
 
       <a href="Fanbase/Fanbase.html" class="project-link">
-        <div class="project">
+        <div class="project" id="Fanbase-project">
           <img
             src="Fanbase/Square Cover.jpeg"
             alt="Fanbase"
             class="project-image"
           />
-          <p class="project-title">Fanbase</p>
+
+          <div class="project-title">
+            <p class="project-header">Fanbase</p>
+            <p class="project-sub"> Reimagining Music Sharing and Community Building within Spotify's Ecosystem
+            </p>
+          </div>
+
         </div>
       </a>
 
       <a href="Obituary/Obituary.html" class="project-link">
-        <div class="project">
+        <div class="project" id="obituary-project">
           <img
             src="Obituary/Obituary_cover.webp"
             alt="Fanbase"
             class="project-image"
           />
-          <p class="project-title">Obituary Generator</p>
+          <div class="project-title">
+          <p class="project-header">Obituary Generator</p>
+          <p class="project-sub">Creating Heartfelt Obituaries: An Intuitive Online Generator for Personal Tributes
+          </p></div>
+
         </div>
       </a>
 
       <a href="Rubato/Rubato.html" class="project-link">
-        <div class="project">
+        <div class="project" id="rubato-project">
           <img src="Rubato/Thumbnail.webp" alt="Rubato" class="project-image" />
-          <p class="project-title">Rubato</p>
+
+          <div class="project-title">
+            <p class="project-header">Rubato</p>
+            <p class="project-sub">Tuning the User Interface for Discerning Audio Equipment Shoppers
+            </p></div>
         </div>
       </a>
 
+
       <a href="Steps.org.il/Steps.html" class="project-link">
-        <div class="project">
+        <div class="project" id="steps-project">
           <img
             src="Steps.org.il/Tzeadim logo.png"
             alt="Steps"
             class="project-image"
           />
-          <p class="project-title">Steps.org.il</p>
+
+          <div class="project-title">
+            <p class="project-header">Steps.org.il</p>
+            <p class="project-sub">Designing a Digital Haven for Ex-Orthodox Custody Battles
+            </p></div>
         </div>
       </a>
+
 
       <!-- <a href="Locu-compressed/locu.html" class="project-link">
         <div class="project">
@@ -246,35 +256,59 @@
 			</a> -->
 
       <a href="Typography/Typo.html" class="project-link">
-        <div class="project">
+        <div class="project" id="typo-project">
           <img
             src="Typography/Kolmus_2.webp"
             alt="Typo"
             class="project-image"
           />
-          <p class="project-title">Typography</p>
-        </div>
+          <div class="project-title">
+            <p class="project-header">Typography</p>
+            <p class="project-sub">Beyond Letters: Pushing Boundaries in Hebrew Type Design
+            </p></div>        </div>
       </a>
 
-      <a href="https://www.instagram.com/portnoytim/" class="project-link">
-        <div class="project">
+
+      <!-- <a href="https://www.instagram.com/portnoytim/" class="project-link"> -->
+<!--         
+        <div class="project" id="more-projects">
+
+
+          <a href="Pharmocann/Pharmocann.html">
+              <img
+                src="Pharmocann/Hermon 20 Oil cover.webp"
+                alt="Pharmocann"
+                class="project-image"
+              />
+          </a>
+
+          <a href="Locu-compressed/locu.html">
+              <img
+                src="Locu-compressed/Gummy Pink.webp"
+                alt="Locu"
+                class="project-image"
+              />
+          </a>
+
+          <a href="Pharmocann/Pharmocann.html">
           <img
             src="images main/BingVista.jpeg"
             alt="More"
             class="project-image"
           />
-
+          </a>
           <p class="project-title">And many more projects!</p>
-        </div>
-      </a>
+
+        </div> -->
     </section>
 
     <script src="mainscript.js"></script>
     <script src="Logo_hover_anim.js"></script>
+    <script src="scrolling-highlight.js"></script>
   </body>
   <footer>
     <p style="color: #707070">
-      Copyright &copy; 2023<br />
+      Copyright &copy; 2024<br />
       Designed and programmed by Tim Portnoy
       <a href="https://github.com/timonim/timonim.github.io">
         <i class="fa-brands fa-github fa-lg"></i>

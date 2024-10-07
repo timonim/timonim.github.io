@@ -20,6 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
 
+    
     <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/f3c3c26187.js"
@@ -28,8 +29,6 @@
   </head>
 
   <body>
-
-    
     <header class="header">
       <a href="index.html" class="logo-link">
         <img
@@ -46,99 +45,71 @@
       </a>
     </header>
 
-    <section class="hero">
-      <p class="hero-text">
-        I'm Tim Portnoy,
-        <br />
-        <span style="color: #ff9900">product designer</span>
-      </p>
-
-      <div class="read-more">
-        <button id="my-button" class="main-button" style="animation-delay: 0.8s">
-          <span class="material-symbols-outlined"> mood </span>
+    <div class="hero" id="hero">
+      <div id="hero-content">
+        <p class="hero-text">
+          I'm Tim Portnoy,
+          <br />
+          <span style="color: #ff9900">product designer</span>
+        </p>
+      
+        <button id="more-about-me-btn" class="main-button">
+          <span class="material-symbols-outlined">mood</span>
           More about me
         </button>
+      </div>
+    </div>
 
-        <div id="my-paragraph" class="hidden">
-          <div class="hero-bio">
-            <section class="portrait-container">
-              <div class="portrait-image">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <img
-                      class="hero-image"
-                      id="hero-image"
-                      src="images main/portrait.jpg"
-                      alt="Front Image"
-                    />
-                  </div>
-
-                  <div class="card-back">
-                    <!-- Content for the back side of the card -->
-                    <img
-                      class="hero-image"
-                      id="hero-image"
-                      src="images main/portrait2.jpeg"
-                      alt="Front Image"
-                    />
-                  </div>
-                </div>
+    <div id="bio-content" class="hidden">
+              <button id="close-bio-btn" class="tertiary-button">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="hero-bio">
+          <section class="portrait-container">
+            <div class="card">
+              <div class="front">
+                  <!-- Front side of the card -->
+                  <img src="images main/portrait.jpg" alt="Portrait 1">
               </div>
-
-              <section class="button-container">
-                <a href="https://www.instagram.com/portnoytim/"
-                  ><div class="tertiary-button">Instagram</div></a
-                >
-
-                <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/">
-                  <div class="tertiary-button">Linkedin</div>
-                </a>
-              </section>
-            </section>
-            <section class="bio-container">
-              <p>
-                I'm Tim Portnoy, a multidisciplinary designer based in Tel Aviv,
-                Israel. I specialize in designing visually stunning and highly
-                functional solutions, particularly for complex products and
-                design systems.
-                <br /><br />
-                My skills include UI/UX, brand design, typography, AI image
-                generation, marketing, graphic design, and 3D, and I use tools
-                like Figma, Stable Diffusion, Blender, Illustrator, Indesign,
-                Photoshop, Procreate, and more.
-                <br /><br />
-
-                I love creating designs that solve problems and impress. Whether
-                it’s an app, a brand, or something else, I tailor my designs to
-                be functional and beautiful for every project.
-                <br /><br />
-
-                Asides design, I love languages, jazz and history podcasts.
-              </p>
-              <br />
-
-              <section class="button-container">
-                <a href="mailto:portnoytim@gmail.com">
-                  <button class="secondary-button">
-                    <span class="material-symbols-outlined"> mail </span>Let's
-                    talk
-                  </button>
-                </a>
-
-                <a
-                  href="images main/Tim-Portnoy-Resume-Jan.pdf"
-                  style="color: #ff9900; text-decoration: underline"
-                  ><button class="tertiary-button">
-                    <span class="material-symbols-outlined"> description </span>
-                    <span>My Resume</span>
-                  </button></a
-                >
-              </section>
-            </section>
+              <div class="back">
+                  <!-- Back side of the card -->
+                  <img src="images main/portrait2.jpeg" alt="Portrait 2">
+              </div>
           </div>
+            <section class="button-container">
+              <a href="https://www.instagram.com/portnoytim/"><div class="tertiary-button">Instagram</div></a>
+              <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/">
+                <div class="tertiary-button">Linkedin</div>
+              </a>
+            </section>
+          </section>
+          <section class="bio-container">
+            <p>
+              I'm Tim Portnoy, a multidisciplinary designer based in Tel Aviv, Israel. I specialize in designing visually stunning and highly functional solutions, particularly for complex products and design systems.
+              <br /><br />
+              My skills include UI/UX, brand design, typography, AI image generation, marketing, graphic design, and 3D, and I use tools like Figma, Stable Diffusion, Blender, Illustrator, Indesign, Photoshop, Procreate, and more.
+              <br /><br />
+              I love creating designs that solve problems and impress. Whether it's an app, a brand, or something else, I tailor my designs to be functional and beautiful for every project.
+              <br /><br />
+              Asides design, I love languages, jazz and history podcasts.
+            </p>
+            <br />
+            <section class="button-container">
+              <a href="mailto:portnoytim@gmail.com">
+                <button class="secondary-button">
+                  <span class="material-symbols-outlined">mail</span>Let's talk
+                </button>
+              </a>
+              <a href="images main/Tim-Portnoy-Resume-Jan.pdf" style="color: #ff9900; text-decoration: underline">
+                <button class="tertiary-button">
+                  <span class="material-symbols-outlined">description</span>
+                  <span>My Resume</span>
+                </button>
+              </a>
+            </section>
+          </section>
         </div>
       </div>
-    </section>
 
     <section class="works">
       <a href="Flytrex/Flytrex.html" class="project-link">
@@ -302,9 +273,21 @@
         </div> -->
     </section>
 
-    <script src="mainscript.js"></script>
-    <script src="Logo_hover_anim.js"></script>
-    <script src="scrolling-highlight.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+
+<script src="Logo_hover_anim.js"></script>
+<script src="animations.js"></script>
+
+    <script src="https://unpkg.com/split-type"></script>
+
+
+
   </body>
   <footer>
     <p style="color: #707070">

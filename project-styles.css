@@ -214,10 +214,9 @@ p {
 }
 
 .project-container {
-  /* max-width: clamp(28rem, 10rem + 32vw, 32vw); */
-  padding: 12% 12%;
+  padding: 8vw;
   margin-bottom: 1em;
-  border-radius: 16px;
+  border-radius: 24px;
   background-color: #f4f4f4;
   gap: 4vw;
   display: flex;
@@ -314,6 +313,35 @@ p {
 #Spotify-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+/* About me */
+
+/* styles.css */
+#manifesto-section {
+  width: 100%;
+}
+
+#bio-card {
+  align-items: start;
+  text-align: left;
+  font-weight: 400;
+  justify-content: flex-start;
+  display: flex;
+  position: relative;
+  padding: 1.6em;
+  gap: 0.2em;
+  border-radius: 24px;
+  background-color: #f4f4f4;
+  overflow: hidden;
+  will-change: outline;
+  transition: background-color 0.3s ease-out;
+  box-shadow: var(--shadow-elevation-low);
+
+}
+
+#value-title {
+  width: 100%;
 }
 
 #Spotify {

@@ -57,23 +57,6 @@ body {
   margin: 0 16%;
   line-break: auto;
   color: #333;
-  /* margin-top: 2%; */
-}
-
-body {
-  opacity: 0;
-  animation: fade-in 1s ease-in-out forwards;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Scrollbar styles */
@@ -203,7 +186,7 @@ i {
 }
 
 .hero {
-  margin: 4vw 0;
+  margin: 0 0 8vw 0;
   order: 1;
   display: flex;
   flex-direction: column;
@@ -218,7 +201,7 @@ i {
   box-shadow: 0 8px 64px 0 rgba(255, 187, 0, 0.1),
   inset 0 2px 8px 0 rgba(255, 190, 93, 0.1),
   inset 0 16px 64px 0 rgba(255, 255, 255, 0.1);
-  padding: 6vw 6vw;
+  padding: 8vw;
   
   /* Updated background with radial gradient */
   background: radial-gradient(
@@ -243,7 +226,7 @@ i {
   flex-direction: column;
   align-items: center;
   gap: 0.6em;
-  padding: 10vw 0;
+  padding: 8vw 0;
 }
 
 .hero-text {
@@ -372,30 +355,6 @@ i {
   transform: rotateY(0deg);
 }
 
-#bio-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6em;
-  align-items: flex-end;
-  /* padding: 6vw 6vw; */
-  border-radius: 16px;
-  background-color: #f4f4f4;
-  /* margin: 4vw 0; */
-  /* transition: all 0.1s linear; */
-}
-
-#bio-content {
-  overflow: hidden;
-  height: 0;
-  opacity: 0;
-}
-
-#bio-content.hidden {
-  pointer-events: none; /* Optional, depending on your design */
-  /* padding: 5vw 5vw; */
-}
-
-
 .hero-container {
   position: relative; /* Ensure the hero div is positioned relatively */
 }
@@ -431,7 +390,7 @@ iframe {
 /* Text styles */
 
 h1 {
-  font-size: clamp(2rem, 12vw, 6rem);
+  font-size: clamp(2rem, 12vw, 5rem);
   margin: 0;
   line-height: 110%;
   font-weight: 400;
@@ -439,7 +398,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  font-size: clamp(1.1rem, 4vw, 2.4rem);
   max-width: 80%;
   font-weight: 600;
 }
@@ -567,6 +526,7 @@ p {
     gap: 0.3em;
     padding: 0em 0.8em;
     height: 40px;
+    width: max-content;
   }
 }
 
@@ -615,6 +575,12 @@ p {
 a {
   text-decoration: none; /* Remove underline */
   color: #595959;
+  /* display: flex; */
+  text-decoration: none; /* Removes underline if not desired */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  border: none; /* Optionally remove any borders applied by the browser */
+  background-color: transparent; /* Optionally ensure it doesn't have a background color */
 }
 
 a:hover {
@@ -623,6 +589,10 @@ a:hover {
 
 .works a:hover {
   color: transparent;
+}
+
+.hero a {
+  line-height: 0;
 }
 
 .works {
@@ -644,7 +614,7 @@ a:hover {
   order: 2;
   border-radius: 24px;
   object-fit: cover;
-  width: 32%;
+  width: 28%;
   height: auto;
   aspect-ratio: 1/1;
   border: 2px solid rgba(0, 0, 0, 0.05);
@@ -664,10 +634,10 @@ a:hover {
   flex-direction: row;
   align-items: start;
   position: relative;
-  padding: 1.6em;
+  padding: 2vw;
   gap: 2em;
-  border-radius: 16px;
-  font-size: 24px;
+  border-radius: 24px;
+  /* font-size: 24px; */
   background-color: #f4f4f4;
   justify-content: space-between;
   overflow: hidden;
@@ -736,6 +706,12 @@ a:hover {
 }
 
 
+#category-title {
+  background-color: transparent;
+  outline: transparent;
+  padding: 0 2vw;
+}
+
 .project-header {
   color: #333;
   font-size: clamp(2rem, 2.2vw, 2.6rem);
@@ -749,12 +725,13 @@ a:hover {
   margin: 0;
 }
 
+
 /* Responsive Styles for Mobile Devices */
 @media (max-width: 768px) {
   .project {
     flex-direction: column;
     gap: 1em;
-    padding: 1em;
+    padding: 1.6em;
   }
 
   .project-title {
@@ -795,7 +772,7 @@ footer {
   gap: 2rem;
   align-items: center;
   flex-direction: column;
-  padding: 1em;
+  margin: 1em;
   line-height: 150%;
 }
 

@@ -42,26 +42,34 @@ if (footerElement) {
   document.body.appendChild(newFooter);
 }
 
+const ANIMATION_DURATION = 800;
+const ANIMATION_INCREMENT = 20;
+
 function scrollToTop() {
-  const duration = 800;
-  const start = window.pageYOffset;
-  const distance = -start;
   let currentTime = 0;
-  const increment = 20;
 
   function animateScroll() {
-    currentTime += increment;
-    const easeProgress = easeOutQuad(currentTime / duration);
-    const scrollPosition = start + distance * easeProgress;
-    window.scrollTo(0, scrollPosition);
-
-    if (currentTime < duration) {
-      requestAnimationFrame(animateScroll);
+    if (currentTime >= ANIMATION_DURATION) {
+      window.scrollTo(0, 0);
+      return;
     }
+
+    currentTime += ANIMATION_INCREMENT;
+
+    const easeProgress = easeInOutQuad(currentTime / ANIMATION_DURATION);
+    const scrollPosition = (1 - easeProgress) * window.pageYOffset;
+
+    try {
+      window.scrollTo(0, scrollPosition);
+    } catch (error) {
+      console.error("Error during scrolling:", error);
+    }
+
+    requestAnimationFrame(animateScroll);
   }
 
-  function easeOutQuad(t) {
-    return t * (2 - t);
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   }
 
   animateScroll();

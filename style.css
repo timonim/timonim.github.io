@@ -18,7 +18,14 @@
     11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
     17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
     25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
 
+:root {
+  --color-white: #fff;
+  --color-accent: #ff9900;
+  --color-light-background: #f7f6f5;
+  --color-dark-text: #333;
+  --color-medium-text: #595959;
 }
 
 html {
@@ -51,12 +58,13 @@ a {
 }
 
 /* Body styles */
+
 body {
   --font-sans-serif: DM Sans, sans-serif;
-  background: #fff;
-  margin: 0 16%;
+  background: var(--color-white);
+  margin: 0 16vw;
   line-break: auto;
-  color: #333;
+  color: var(--color-dark-text);
 }
 
 /* Scrollbar styles */
@@ -77,7 +85,7 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  box-shadow: inset #ff9900 0 0 0 10px;
+  box-shadow: inset var(--color-accent) 0 0 0 10px;
 }
 
 iframe::-webkit-scrollbar {
@@ -93,7 +101,7 @@ iframe::-webkit-scrollbar-thumb {
 
 /* Handle on hover */
 iframe::-webkit-scrollbar-thumb:hover {
-  box-shadow: inset #ff9900 0 0 0 10px;
+  box-shadow: inset var(--color-accent) 0 0 0 10px;
 }
 
 /* Header styles */
@@ -156,14 +164,14 @@ iframe::-webkit-scrollbar-thumb:hover {
 }
 
 i {
-  color: #333;
+  color: var(--color-dark-text);
   font-size: 1.5em;
 }
 
 /* Media Queries */
 @media (max-width: 1080px) {
   body {
-    margin: 0 4vw;
+    margin: 0 6vw;
   }
 
   .header img {
@@ -192,7 +200,7 @@ i {
   flex-direction: column;
   overflow: visible;
   text-overflow: ellipsis;
-  font-size: clamp(2.4em, 6vw, 6em);
+	font-size: clamp(2.4em, 6vw, 6rem);
   flex-grow: 1;
   align-items: center;
   justify-content: center;
@@ -236,7 +244,7 @@ i {
   animation-delay: 0.2s
 }
 
-@media only screen and (min-width: 1080px) {
+@media only screen and (min-width: 768px) {
   .mobile-only {
     display: none;
   }
@@ -246,7 +254,7 @@ i {
   display: flex;
   overflow-wrap: break-word;
   text-align: left;
-  font-size: clamp(1rem, 0.775rem + 0.5vw, 1.4rem);
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
@@ -267,9 +275,7 @@ i {
 .bio-container {
   display: flex;
   flex-direction: column;
-  max-width: 26vw;
-  min-width: 20em;
-  line-height: 1.5em;
+  width: clamp(20em, 6vw, 10vw);
   gap: 0.6em;
 }
 
@@ -281,7 +287,7 @@ i {
   justify-content: flex-start;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 768px) {
   .bio-container .button-container {
     justify-content: center;
     align-items: center;
@@ -360,7 +366,7 @@ i {
 }
 
 /* Responsive adjustments */
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 768px) {
 
   .portrait-container, .bio-container {
     width: 100%;
@@ -390,15 +396,14 @@ iframe {
 /* Text styles */
 
 h1 {
-  font-size: clamp(2rem, 12vw, 5rem);
+  font-size: clamp(2rem, 10vw, 5rem);
   margin: 0;
   line-height: 110%;
   font-weight: 400;
-  letter-spacing: 2px;
 }
 
 h2 {
-  font-size: clamp(1.1rem, 4vw, 2.4rem);
+  font-size: clamp(1.1rem, 4vw, 2.2rem);
   max-width: 80%;
   font-weight: 600;
 }
@@ -411,14 +416,14 @@ h3 {
 h2,
 h3 {
   margin: 0;
-  color: #595959;
+  color: var(--color-medium-text);;
 }
 
 p {
     letter-spacing: -0.1px;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 768px) {
   #my-paragraph {
     max-height: none; /* Remove the max-height restriction on smaller screens */
   }
@@ -455,8 +460,8 @@ p {
 .main-button {
   padding: 0.5em 1.2em;
   font-size: 1.2rem;
-  background-color: #ff9900;
-  color: #fff;
+  background-color: var(--color-accent);
+  color: var(--color-white);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -499,14 +504,14 @@ p {
 }
 
 .secondary-button {
-  color: #333;
+  color: var(--color-dark-text);
   border: 2px solid rgba(255, 153, 0, 0.7);
   font-size: 1.1rem;
 }
 
 .secondary-button:hover {
   background-color: rgba(255, 153, 0, 0.1);
-  border-color: #ff9900;
+  border-color: var(--color-accent);
 }
 
 .tertiary-button {
@@ -518,7 +523,7 @@ p {
   background-color: rgba(255, 153, 0, 0.1);
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 768px) {
   .main-button,
   .secondary-button,
   .tertiary-button {
@@ -532,7 +537,7 @@ p {
 
 /* Media Queries */
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 768px) {
 
 #hero-content {
   display: flex;
@@ -554,7 +559,6 @@ p {
   .bio-container {
     margin: 0;
     max-width: 100%;
-    line-height: 1.6em;
     min-width: auto;
   }
 
@@ -574,7 +578,7 @@ p {
 
 a {
   text-decoration: none; /* Remove underline */
-  color: #595959;
+  color: var(--color-medium-text);;
   /* display: flex; */
   text-decoration: none; /* Removes underline if not desired */
   padding: 0; /* Removes default padding */
@@ -584,7 +588,7 @@ a {
 }
 
 a:hover {
-  color: #ff9900;
+  color: var(--color-accent);
 }
 
 .works a:hover {
@@ -713,15 +717,16 @@ a:hover {
 }
 
 .project-header {
-  color: #333;
-  font-size: clamp(2rem, 2.2vw, 2.6rem);
+  color: var(--color-dark-text);
+  font-size: clamp(1.4rem, 2.2vw, 2.6rem);
   margin: 0;
+  line-height: 120%;
 }
 
 .project-sub {
-  color: #595959;
+  color: var(--color-medium-text);;
   line-height: 150%;
-  font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+  font-size: clamp(1rem, 1.2vw, 1.6rem);
   margin: 0;
 }
 
@@ -738,14 +743,6 @@ a:hover {
     width: 100%; /* Adjust title width to fit mobile screens */
     order: 2; /* Assuming you might want to change the visual order on mobile */
     gap: 0.4em;
-  }
-
-  .project-header {
-    font-size: clamp(1.6rem, 4vw, 1.8rem);
-  }
-
-  .project-sub {
-    font-size: clamp(1.1rem, 3vw, 1.2rem);
   }
 
   .project::before {

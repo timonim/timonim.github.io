@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.ticker.lagSmoothing(0);
 
   const cursor = document.querySelector('.custom-cursor');
-  const projects = gsap.utils.toArray('.project');
+  const projects = gsap.utils.toArray('.project'); // Includes .social-card with .project class
   const bentoBoxes = gsap.utils.toArray('.bento-box');
 
   // Custom cursor animation
@@ -98,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set initial states for elements
     gsap.set('.hero, .hero-text, .button-container button, .button-container .tertiary-button, .bio-container p, .card', {
       autoAlpha: 0,
-      scale: 0.8,
-      y: 10
+      scale: 0.9,
+      y: -50
     });
 
     // Animation timeline for hero section
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .to('.hero-text', { autoAlpha: 1, y: 0, scale: 1, duration: 0.8 }, 'start-=0.3')
       .staggerTo(['.button-container button', '.bio-container p', '.button-container .tertiary-button', '.card'], 0.8, {
           autoAlpha: 1,
-          y: 0,
+          y: -2,
           scale: 1,
           ease: 'power3.out'
       }, 0.15, 'start-=0.3');

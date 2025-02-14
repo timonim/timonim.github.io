@@ -35,7 +35,7 @@ img, video {
 }
 
 video {
-	border-radius: 16px;
+	border-radius: 24px;
 }
 
 /* Styles for the desktop image */
@@ -64,7 +64,7 @@ video {
 .youtube-video {
   aspect-ratio: 16/9;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 24px;
   flex: 1;
   height: 0;
 }
@@ -86,11 +86,11 @@ video {
   display: flex;
   flex-direction: column;
   gap: 1.8vh;
-  width: 100%;
-}
+  width: 48%;
+  }
 
 .flex-item, .column-gallery-flex img, .column-gallery-flex video {
-  border-radius: 16px;
+  border-radius: 24px;
   object-fit: contain;
   width: 100%;
 }
@@ -102,7 +102,7 @@ video {
 }
 
 .flex-item img {
-  border-radius: 16px;
+  border-radius: 24px;
   object-fit: contain;
   width: 100%;
   height: auto;
@@ -146,7 +146,7 @@ video {
 .column-gallery-flex video {
   vertical-align: middle;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 24px;
 }
 
 @media screen and (max-width: 768px) {
@@ -178,7 +178,7 @@ video {
 #text-left-padding,
 .project-description,
 p {
-  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
   line-height: 1.5em;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -189,7 +189,7 @@ p {
 .project-container {
   padding: 8vw;
   margin-bottom: 1em;
-  border-radius: 24px;
+  border-radius: 36px;
   background-color: var(--color-light-background);
   gap: 4vw;
   display: flex;
@@ -211,7 +211,7 @@ p {
   line-height: 120%;
   letter-spacing: -0.5px;
   text-align: center;
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: var(--shadow-elevation-low);
   transition: transform 0.1s ease;
   display: flex;
@@ -269,7 +269,7 @@ p {
 
 .grid-container img {
   /* height: 100%; */
-  border-radius: 16px;
+  border-radius: 24px;
 }
 
 @media screen and (max-width: 768px) {
@@ -306,7 +306,7 @@ p {
 .column-gallery-flex video {
   vertical-align: middle;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 24px;
 }
 
 @media screen and (max-width: 768px) {
@@ -343,13 +343,12 @@ p {
   position: relative;
   padding: 8%;
   gap: 0.2em;
-  border-radius: 24px;
+  border-radius: 36px;
   background-color: #f4f4f4;
   overflow: hidden;
   will-change: outline;
   transition: background-color 0.3s ease-out;
   box-shadow: var(--shadow-elevation-low);
-
 }
 
 #value-title {
@@ -409,7 +408,7 @@ p {
 
 /* Mobile */
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   body {
     flex-direction: column;
     text-align: left;
@@ -450,7 +449,7 @@ p {
 
 #rubato-mockups {
   background: linear-gradient(35deg, #b78de4, #f0f0f0);
-  border-radius: 16px;
+  border-radius: 24px;
 }
 
 .mockup-container {
@@ -481,7 +480,7 @@ p {
 }
 
 .mockup {
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: var(--shadow-elevation-low),
     inset 2px 2px 8px rgba(255, 255, 255, 0.1),
     0 0 30px rgba(255, 255, 255, 0.2);
@@ -500,6 +499,7 @@ p {
 @media (max-width: 768px) {
 .mockup{
     width: 100%;
+    border-radius: 12px;
   }
 
   .mockup-container {
@@ -531,6 +531,7 @@ p {
 
 .mockup:hover {
   transform: scale(1.1) rotateY(5deg);
-  box-shadow: var(--shadow-elevation-medium), inset 2px 2px 80px rgba(255, 255, 255, 0.4) , 0 0 30px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-out;
+  box-shadow: var(--shadow-elevation-medium), inset 2px 2px 80px rgba(255, 255, 255, 0.9) , 0 0 30px rgba(111, 0, 255, 0.1);
   z-index: 10;
 }

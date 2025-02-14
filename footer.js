@@ -22,7 +22,7 @@ arrow_upward
 </div>
 
 <p style="color: #707070;">
-Copyright &copy; 2024<br>
+Copyright &copy; 2025 Tim Portnoy<br>
 Designed and programmed by Tim Portnoy
 <a href="https://github.com/timonim/timonim.github.io">
   <i class="fa-brands fa-github fa-lg"></i>

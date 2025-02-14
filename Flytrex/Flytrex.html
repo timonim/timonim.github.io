@@ -29,21 +29,6 @@
   </head>
 
   <body>
-    <header class="header">
-      <a href="../index.html" class="logo-link">
-        <img
-          src="../images main/Logo Tet.svg"
-          alt="Logo for Tim Portnoy's design portfolio"
-          class="logo-image"
-          id="logo"
-        />
-      </a>
-      <a href="mailto:portnoytim@gmail.com">
-        <button class="secondary-button">
-          <span class="material-symbols-outlined"> mail </span>Let's talk
-        </button>
-      </a>
-    </header>
 
     <div class="project-gallery">
       <section class="project-container">
@@ -96,16 +81,29 @@
             flexibility and customer satisfaction.
           </p>
         </div>
+
+        
         <div class="grid-container" id="Two-grid">
           <div class="bento-box" id="Flytrex">
             <i class="fa-solid fa-mobile-screen-button"></i> Worked on 4
             different apps across 3 platforms
           </div>
-
+          
           <div class="bento-box" id="Flytrex">
             <i class="fa-solid fa-highlighter"></i> Lead marketing
             and social media design
           </div>
+        </div>
+        
+        <div class="flex-item" id="flex-caption">
+          <img
+            src="field testing pic.jpg"
+            alt="Main page"
+            style="aspect-ratio: 4/3"
+          />
+          <figcaption class="figcaption">
+            Field testing of the Flytrex food delivery apps
+          </figcaption>
         </div>
       </section>
 
@@ -117,9 +115,9 @@
           <p>
             Flytrex's Ground Control System app (GCS) is a platform for fleet
             management, flight networks, and admin tools. As part of the Flytrex
-            design team, I redesigned key sections of the GCS app, including the
+            design team, I led the redesign of the GCS app, including the
             dashboard, drone monitoring, route planning, and site management.
-            <br /><br />
+            <br /><br/>
             Our aim was to streamline workflows for operators and fleet managers
             by consolidating data views, simplifying navigation, and improving
             map planning for easier site expansion. The updated GCS app launched
@@ -128,7 +126,7 @@
           </p>
 
           <p style="font-weight: 800">
-            Images of this project are unavailable due to NDA
+            *Images of this project are unavailable due to NDA
           </p>
         </div>
         <!-- Bento Grid -->
@@ -156,7 +154,6 @@
       <!-- <div class="spacer"></div> -->
 
       <section class="project-container">
-        <div class="flex-container-row">
           <div class="flex-container-column">
             <h2>Food ordering app</h2>
             <p>
@@ -173,12 +170,10 @@
               dining experience for users.
             </p>
           </div>
-
-          <div class="flex-item">
+          
+           <div class="flex-item">
             <img src="FOA.webp" alt="Main page" style="aspect-ratio: 4/3" />
           </div>
-        </div>
-
         <div class="grid-container" id="Four-grid">
           <img src="Multiple Selection - TRUE.webp" alt="Multiple Selection" />
           <img
@@ -193,7 +188,6 @@
       <!-- <div class="spacer"></div> -->
 
       <section class="project-container">
-        <div class="flex-container-row">
           <div class="flex-container-column">
             <h2>Marketing</h2>
             <p>
@@ -206,6 +200,8 @@
             </p>
           </div>
 
+        <div class="flex-container-row">
+
           <div class="flex-item" id="flex-caption">
             <img
               src="Stickers.webp"
@@ -216,6 +212,18 @@
               Flytrex stickers; included with each first order
             </figcaption>
           </div>
+
+          <div class="flex-item" id="flex-caption">
+            <img
+              src="flytrex drawings.png"
+              alt="Main page"
+              style="aspect-ratio: 4/3"
+            />
+            <figcaption class="figcaption">
+              Kids in North Carolina  drawing the stickers I designed 
+            </figcaption>
+          </div>
+
         </div>
 
         <div class="grid-container" id="Two-grid">
@@ -259,11 +267,13 @@
 
     <footer></footer>
 
+
+
     <!-- Footer script -->
     <script src="../footer.js"></script>
 
-    <!-- Tet hover script -->
-    <script src="../Logo_hover_anim.js"></script>
+    <!-- Header script -->
+    <script src="../header-script.js"></script>
     
   </body>
 </html>

@@ -19,8 +19,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    
+
+   
+
     <link rel="stylesheet" href="style.css" />
+   
+   
+    <link re="stylesheet" href="project-styles.css"/>
     <script
       src="https://kit.fontawesome.com/f3c3c26187.js"
       crossorigin="anonymous"
@@ -28,30 +33,14 @@
   </head>
 
   <body>
-    <header class="header">
-      <a href="index.html" class="logo-link">
-        <img
-          src="images main/Logo Tet.svg"
-          alt="Logo for Tim Portnoy's design portfolio"
-          class="logo-image"
-          id="logo"
-        />
-      </a>
-
-      <a href="mailto:portnoytim@gmail.com">
-        <button class="secondary-button">
-          <span class="material-symbols-outlined"> mail </span>Let's talk
-        </button>
-      </a>
-    </header>
 
     <div class="hero" id="hero">
       <div id="hero-content">
-        <p class="hero-text">
+        <span class="hero-text">
           I'm Tim Portnoy,
           <br />
           <span style="color: #ff9900" >product designer</span>
-        </p>
+        </span>
         <a href="about_me.html">
         <button id="more-about-me-btn" class="main-button">
           <span class="material-symbols-outlined">sentiment_very_satisfied</span>
@@ -64,7 +53,7 @@
     <section class="works">
       <div class="project" id="category-title">
         <div class="project-title">
-          <p class="project-sub">Selected Works</p>
+          <h3 class="project-sub">Selected Works</h3>
         </div>
     </div>
       <a href="Flytrex/Flytrex.html" class="project-link">
@@ -98,6 +87,17 @@
         </div>
       </a>
 
+      <a href="Rubato/Rubato.html" class="project-link">
+        <div class="project" id="rubato-project">
+          <img src="Rubato/Thumbnail.webp" alt="Rubato" class="project-image" />
+
+          <div class="project-title">
+            <p class="project-header">Rubato</p>
+            <p class="project-sub">Tuning the User Interface for Discerning Audio Equipment Shoppers
+            </p></div>
+        </div>
+      </a>
+
       <a href="Obituary/Obituary.html" class="project-link">
         <div class="project" id="obituary-project">
           <img
@@ -112,18 +112,6 @@
 
         </div>
       </a>
-
-      <a href="Rubato/Rubato.html" class="project-link">
-        <div class="project" id="rubato-project">
-          <img src="Rubato/Thumbnail.webp" alt="Rubato" class="project-image" />
-
-          <div class="project-title">
-            <p class="project-header">Rubato</p>
-            <p class="project-sub">Tuning the User Interface for Discerning Audio Equipment Shoppers
-            </p></div>
-        </div>
-      </a>
-
 
       <a href="Steps.org.il/Steps.html" class="project-link">
         <div class="project" id="steps-project">
@@ -222,6 +210,49 @@
           <p class="project-title">And many more projects!</p>
 
         </div> -->
+
+        <div class="project" id="category-title">
+          <div class="project-title">
+            <h3 class="project-sub">Let's talk</h3>
+          </div>
+      </div>
+
+        <div class="socials-section" id="socials-section">
+
+       <a href="https://www.linkedin.com/in/tim-portnoy/">
+    <div id="linkedin-card" class="social-card project">
+        <i class="fa-brands fa-linkedin-in"></i> 
+        <p class="project-sub">Let's connect</p>
+        <p class="project-header">LinkedIn</p>
+    </div>
+</a>
+
+<a href="https://github.com/timonim/">
+  <div id="github-card" class="social-card project" >
+        <i class="fa-brands fa-github-alt"></i>
+        <p class="project-sub">My code</p>
+        <p class="project-header">Github</p>
+    </div>
+</a>
+
+<a href="https://www.instagram.com/portnoytim/">
+    <div id="instagram-card" class="social-card project">
+        <i class="fa-brands fa-instagram"></i>
+        <p class="project-sub">More works</p>
+        <p class="project-header">Instagram</p>
+    </div>
+</a>
+
+<a href="mailto:portnoytim@gmail.com">
+  <div id="email-card" class="social-card project">
+        <i class="fa-regular fa-comments"></i> 
+        <p class="project-sub">Say hey</p>
+        <p class="project-header">Email </p>
+    </div>
+</a>
+
+        </div>
+        
     </section>
 
     <!-- Scripts -->
@@ -231,18 +262,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
 
-<script src="Logo_hover_anim.js"></script>
+ <!-- Header script -->
+ <script src="../header-script.js"></script>
 
+ 
 <script src="animations.js"></script>
 
   </body>
-  <footer>
-    <p style="color: #707070">
-      Copyright &copy; 2024<br />
-      Designed and programmed by Tim Portnoy
-      <a href="https://github.com/timonim/timonim.github.io">
-        <i class="fa-brands fa-github fa-lg"></i>
-      </a>
-    </p>
-  </footer>
+  <footer></footer>
+
+    <!-- Footer script -->
+    <script src="../footer.js"></script>
 </html>

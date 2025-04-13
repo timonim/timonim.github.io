@@ -22,7 +22,6 @@
 
     
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="project-styles.css" />
 
     <script
       src="https://kit.fontawesome.com/f3c3c26187.js"
@@ -32,51 +31,107 @@
 
   <body>
 
-    <div class="hero" id="hero">
+    <div class="hero bio-section" id="hero">
         <div class="hero-bio">
-          <section class="portrait-container">
-            <div class="card">
-              <div class="front">
-                  <!-- Front side of the card -->
-                  <img src="images main/portrait.jpg" alt="Portrait 1">
+          <!-- Main bio content column -->
+          <div class="bio-right">
+            <!-- Name and title section -->
+            <div class="name-block">
+              <div class="portrait-container">
+                <div class="name-content">
+                  <div class="designer-title">Product Designer</div>
+                  <h1 class="designer-name">Tim Portnoy</h1>
+                  <!-- Location and social icons in a single row -->
+                  <div class="bio-contact-info">
+                    <div class="designer-location">
+                      <i class="fas fa-map-marker-alt"></i> Tel Aviv, Israel
+                    </div>
+                    <div class="location-divider">•</div>
+                    <div class="social-icons">
+                      <a href="https://www.instagram.com/portnoytim/" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                      <a href="https://github.com/TimPortnoy" class="social-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="portrait-wrapper">
+                  <!-- Geometric background elements -->
+                  <div class="geo-element geo-square"></div>
+                  <div class="geo-element geo-circle"></div>
+                  
+                  <!-- Portrait image -->
+                  <img src="images main/portrait.jpg" alt="Tim Portnoy" class="portrait-img">
+                </div>
               </div>
-              <div class="back">
-                  <!-- Back side of the card -->
-                  <img src="images main/portrait2.jpeg" alt="Portrait 2">
+            </div>
+            
+            <!-- Bio paragraph -->
+            <p class="bio-paragraph">
+              I design intuitive, visually compelling solutions for complex products and design systems. Merging technical and creative skills, I focus on user-centered functionality and aesthetics to solve diverse industry problems.
+            </p>
+            
+            <!-- Skills section -->
+            <div class="skills-display">
+              <div class="skills-title">Expertise</div>
+              <div class="skills-grid">
+                <div class="skill-item"><i class="fas fa-desktop"></i> UI/UX Design</div>
+                <div class="skill-item"><i class="fas fa-code"></i> Web Design</div>
+                <div class="skill-item"><i class="fas fa-paint-brush"></i> Brand Design</div>
+                <div class="skill-item"><i class="fas fa-font"></i> Typography</div>
+                <div class="skill-item"><i class="fas fa-robot"></i> AI Generation</div>
+                <div class="skill-item"><i class="fas fa-chart-line"></i> Marketing</div>
+                <div class="skill-item"><i class="fas fa-pencil-alt"></i> Graphic Design</div>
+                <div class="skill-item"><i class="fas fa-cube"></i> 3D Modeling</div>
+                <div class="skill-item"><i class="fas fa-coffee"></i> Aeropress Pro</div>
               </div>
-          </div>
-            <section class="button-container">
-              <a href="https://www.instagram.com/portnoytim/"><div class="tertiary-button">Instagram</div></a>
-              <a href="https://www.linkedin.com/in/tim-portnoy-b28372228/">
-                <div class="tertiary-button">Linkedin</div>
-              </a>
-            </section>
-          </section>
-          <section class="bio-container">
-            <p class="text-animation">
-              <span class="sentence"><span style="color: #ff9900; font-weight: 600;">I'm Tim Portnoy,</span> a multidisciplinary designer based in Tel Aviv, Israel. I specialize in designing visually stunning and highly functional solutions, particularly for complex products and design systems.</span><br><br>
-              <span class="sentence">My skills include UI/UX, brand design, typography, AI image generation, marketing, graphic design, and 3D, and I use tools like Figma, Stable Diffusion, Blender, Illustrator, Indesign, Photoshop, Procreate, and more.</span>
-              <br><br>
-              <span class="sentence">I love creating designs that solve problems and impress. Whether it's an app, a brand, or something else, I tailor my designs to be functional and beautiful for every project.</span>
-              <br><br>
-              <span class="sentence">Asides design, I love learning languages, experimental music and perfecting my aeropress technique.</span>
-          </p>
-          
-            <br />
-            <section class="button-container">
+            </div>
+            
+            <!-- Tools section -->
+            <div class="skills-display">
+              <div class="skills-title">Tools</div>
+              <div class="skills-grid">
+                <div class="skill-item"><i class="fab fa-figma"></i> Figma</div>
+                <div class="skill-item"><i class="fab fa-html5"></i> HTML/CSS</div>
+                <div class="skill-item"><i class="fas fa-wand-magic-sparkles"></i> Stable Diffusion</div>
+                <div class="skill-item"><i class="fas fa-cubes"></i> Blender</div>
+                <div class="skill-item"><i class="fas fa-pen-fancy"></i> Adobe Suite</div>
+                <div class="skill-item"><i class="fas fa-tablet-alt"></i> Procreate</div>
+              </div>
+            </div>
+            
+            <!-- Passions section -->
+            <div class="skills-display">
+              <div class="skills-title">Passions</div>
+              <div class="skills-grid">
+                <div class="skill-item"><i class="fas fa-language"></i> Language Learning</div>
+                <div class="skill-item"><i class="fas fa-podcast"></i> History Podcasts</div>
+                <div class="skill-item"><i class="fas fa-gamepad"></i> Rougelikes</div>
+                <div class="skill-item"><i class="fas fa-coffee"></i> Coffee Culture</div>
+                <div class="skill-item"><i class="fas fa-music"></i> Experimental Music</div>
+              </div>
+            </div>
+            
+            <!-- Call to action buttons -->
+            <div class="cta-buttons">
               <a href="mailto:portnoytim@gmail.com">
                 <button class="secondary-button">
                   <span class="material-symbols-outlined">mail</span>Let's talk
                 </button>
               </a>
-              <a href="images main/Tim-Portnoy-Resume-Jan.pdf" style="color: #ff9900;">
+              <a href="images main/Tim-Portnoy-Resume-2025.pdf">
                 <button class="tertiary-button">
                   <span class="material-symbols-outlined">description</span>
                   <span>My Resume</span>
                 </button>
               </a>
-            </section>
-          </section>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -182,7 +237,7 @@
 
 <div class="socials-section" id="socials-section">
 
-<a href="https://github.com/TimPortnoy">
+<a href="https://www.linkedin.com/in/tim-portnoy-b28372228/">
 <div id="linkedin-card" class="social-card">
 <i class="fa-brands fa-linkedin-in"></i> 
 <p class="project-sub">Let's connect</p>
@@ -198,7 +253,7 @@
 </div>
 </a>
 
-<a href="https://github.com/TimPortnoy">
+<a href="https://www.instagram.com/portnoytim/">
 <div id="instagram-card" class="social-card">
 <i class="fa-brands fa-instagram"></i>
 <p class="project-sub">More works</p>
@@ -206,7 +261,7 @@
 </div>
 </a>
 
-<a href="https://github.com/TimPortnoy">
+<a href="mailto:portnoytim@gmail.com">
 <div id="email-card" class="social-card">
 <i class="fa-regular fa-comments"></i> 
 <p class="project-sub">Say hey</p>
@@ -218,14 +273,10 @@
       </section>
    
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
-
- <!-- Header script -->
- <script src="../header-script.js"></script>
+    <!-- Header script -->
+    <script src="../header-script.js"></script>
  
 <script src="animations.js"></script>
 

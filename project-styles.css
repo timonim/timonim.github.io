@@ -16,11 +16,6 @@
   --rubato-background-image: linear-gradient(to top, #ebe2f7, #fbf0ff);
 }
 
-/* Icon styles */
-i {
-  color: var(--color-dark-text);
-}
-
 /* Project styles */
 
 .intro {
@@ -287,51 +282,6 @@ p {
   }
 }
 
-/* Typo Gallery */
-#gallery-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1vw;
-  justify-content: space-between;
-}
-
-.column-gallery-flex {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 23%;
-  gap: 2.4vw;
-}
-
-.column-gallery-flex img,
-.column-gallery-flex video {
-  vertical-align: middle;
-  width: 100%;
-  border-radius: 24px;
-}
-
-@media screen and (max-width: 768px) {
-  .column-gallery-flex {
-    flex-basis: 49%; /* Set the initial size to 40% minus the gap */
-    gap: 5vw;
-  }
-
-  #gallery-flex {
-    gap: 5vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .column-gallery-flex {
-    flex-basis: 100%; /* Set the initial size to 100% */
-    max-width: 100%; /* Set the maximum width to 100% */
-    gap: 5vw;
-  }
-
-  #gallery-flex {
-    gap: 5vw;
-  }
-}
-
 /* About me */
 
 #bio-card {
@@ -413,15 +363,6 @@ p {
     flex-direction: column;
     text-align: left;
     align-items: center;
-  }
-
-  .project,
-  .flex-container-row,
-  .project-container {
-    flex-direction: column;
-    text-align: left;
-    align-items: center;
-    max-width: fit-content;
   }
 
   .project-container {

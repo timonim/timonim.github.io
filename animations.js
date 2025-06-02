@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Utility to detect mobile devices
+  function isMobileDevice() {
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
   const cursor = document.querySelector('.custom-cursor');
   const projects = document.querySelectorAll('.project'); // Includes .social-card with .project class
   const bentoBoxes = document.querySelectorAll('.bento-box');
@@ -21,38 +25,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to handle hover effects
   const addHoverEffects = (elements) => {
-    elements.forEach(el => {
-      // Skip adding hover effects if the element has the ID 'category-title'
-      if (el.id === 'category-title') {
-        return; // Go to the next element
-      }
-
-      el.addEventListener('mouseenter', () => {
-        // Prevent hover effect if entrance animation is still running
-        if (el.dataset.animationInProgress === 'true') {
-            return;
-        }
-        isCursorOverInteractive = true;
-        anime({
-          targets: el,
-          scale: 1.03,
-          duration: 200, // Increased from 120 to make hover slower
-          easing: 'easeOutExpo'
+    if (isMobileDevice()) {
+      // On mobile, use intersection observer to trigger hover when centered
+      const centerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const el = entry.target;
+          // Only trigger if at least 60% of the card is visible and it's centered
+          const rect = el.getBoundingClientRect();
+          const centerY = window.innerHeight / 2;
+          const isCentered = rect.top < centerY && rect.bottom > centerY;
+          if (entry.isIntersecting && isCentered) {
+            // Prevent hover effect if entrance animation is still running
+            if (el.dataset.animationInProgress === 'true') return;
+            // Add a class for mobile-hover, or trigger the same animation
+            el.classList.add('mobile-centered-hover');
+            anime({
+              targets: el,
+              scale: 1.03,
+              duration: 200,
+              easing: 'easeOutExpo'
+            });
+          } else {
+            el.classList.remove('mobile-centered-hover');
+            anime({
+              targets: el,
+              scale: 1,
+              duration: 200,
+              easing: 'easeOutExpo'
+            });
+          }
         });
-        anime({ targets: cursor, scale: 1.5, duration: 200, easing: 'easeOutExpo' }); // Match cursor animation speed
+      }, {
+        threshold: [0.8] // 60% visible
       });
-
-      el.addEventListener('mouseleave', () => {
-        isCursorOverInteractive = false;
-        anime({
-          targets: el,
-          scale: 1,
-          duration: 200, // Increased from 120 to make hover out slower
-          easing: 'easeOutExpo'
+      elements.forEach(el => {
+        if (el.id === 'category-title') return;
+        centerObserver.observe(el);
+      });
+    } else {
+      // Desktop: use mouse events
+      elements.forEach(el => {
+        if (el.id === 'category-title') return;
+        el.addEventListener('mouseenter', () => {
+          if (el.dataset.animationInProgress === 'true') return;
+          isCursorOverInteractive = true;
+          anime({
+            targets: el,
+            scale: 1.03,
+            duration: 200,
+            easing: 'easeOutExpo'
+          });
+          anime({ targets: cursor, scale: 1.5, duration: 200, easing: 'easeOutExpo' });
         });
-        anime({ targets: cursor, scale: 1, duration: 200, easing: 'easeOutExpo' }); // Match cursor animation speed
+        el.addEventListener('mouseleave', () => {
+          isCursorOverInteractive = false;
+          anime({
+            targets: el,
+            scale: 1,
+            duration: 200,
+            easing: 'easeOutExpo'
+          });
+          anime({ targets: cursor, scale: 1, duration: 200, easing: 'easeOutExpo' });
+        });
       });
-    });
+    }
   };
 
   // Apply hover effects

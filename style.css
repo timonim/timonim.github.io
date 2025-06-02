@@ -68,7 +68,7 @@ a {
 
 body {
   background: var(--color-white);
-  margin: 1em 12vw;
+  margin: 1em 16vw;
   line-break: auto;
   color: var(--color-dark-text);
 
@@ -525,56 +525,6 @@ i {
   }
 }
 
-/* Social links - Refined design */
-.social-links {
-  display: flex;
-  gap: 1.2rem;
-  z-index: 3;
-  margin-top: 0.6rem;
-  flex-wrap: wrap;
-}
-
-@media screen and (max-width: 768px) {
-  .social-links {
-    justify-content: center;
-    gap: 1rem;
-  }
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-color-muted);
-  text-decoration: none;
-  position: relative;
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  background-color: var(--accent-color-light);
-  transition: all 0.25s var(--transition-bezier);
-  border: 1px solid rgba(255, 153, 0, 0.05);
-}
-
-.social-link:hover {
-  color: var(--text-color);
-  background-color: var(--accent-color-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
-  border-color: rgba(255, 153, 0, 0.1);
-}
-
-.social-link i {
-  margin-right: 0.5rem;
-  font-size: 1rem;
-  color: var(--accent-color);
-  transition: transform 0.3s ease;
-}
-
-.social-link:hover i {
-  transform: scale(1.1);
-}
-
 .bio-section-wrapper {
   display: flex;
   flex-direction: column;
@@ -656,8 +606,6 @@ i {
   gap: 1.2rem;
   opacity: 1; /* Default opacity set to 1 */
   transform: none; /* Reset transform */
-  animation: fadeUp 0.8s var(--transition-bezier) forwards;
-  animation-delay: 0.4s;
 }
 
 @media screen and (max-width: 768px) {
@@ -875,7 +823,7 @@ p {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.2),
     transparent
   );
   opacity: 0;
@@ -1114,6 +1062,7 @@ a:hover {
 #rubato-project::before {background-image: radial-gradient(circle 40vw at 100% 20%, #d5b8f0, rgba(255, 255, 255, 0));}
 #steps-project::before {background-image: radial-gradient(circle 40vw at 100% 20%, #f69778, rgba(255, 255, 255, 0));}
 #typo-project::before {background-image: radial-gradient(circle 40vw at 100% 20%, #ca69cc, rgba(255, 255, 255, 0));}
+#tidbit-project::before {background-image: radial-gradient(circle 40vw at 100% 20%, #e0caae, rgba(255, 255, 255, 0));}
 
 @media (max-width: 768px) {
   #flytrex-project::before {background-image: radial-gradient(circle 80vw at 100% 0%, rgb(255, 229, 142), rgba(255, 255, 255, 0));}
@@ -1122,6 +1071,7 @@ a:hover {
 #rubato-project::before {background-image: radial-gradient(circle 80vw at 100% 0%, #d5b8f0, rgba(255, 255, 255, 0));}
 #steps-project::before {background-image: radial-gradient(circle 80vw at 100% 0%, #f69778, rgba(255, 255, 255, 0));}
 #typo-project::before {background-image: radial-gradient(circle 80vw at 100% 0%, #ca69cc, rgba(255, 255, 255, 0));}
+#tidbit-project::before {background-image: radial-gradient(circle 80vw at 100% 0%, #e0caae, rgba(255, 255, 255, 0));}
 }
 
 
@@ -1240,16 +1190,16 @@ footer p {
   background-color: #f4f4f4;
   overflow: hidden;
   outline: 0px solid rgba(0, 0, 0, 0.0);
-  transition: all 0.1s ease-out;
+  transition: all 0.2s ease-out;
   will-change: outline;
 }
 
 .social-card:hover {
-  transition: all 0.1s ease-out;
+  transition: all 0.2s ease-out;
   outline: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: var(--shadow-elevation-mid);
   cursor: pointer;
-  transform: rotate(-1deg) translate(0, -8px) scale(1.04);
+  /* transform: rotate(-1deg) translate(0, -8px) scale(1.04); */
 }
 
 .social-card i {
@@ -1261,6 +1211,8 @@ footer p {
 
 /* Hover Effects */
 
+/* LinkedIn Card */
+
 #linkedin-card:hover {
   background: linear-gradient(135deg, rgba(74, 153, 255, 0.2) 0%, rgba(0, 119, 181, 0.2) 100%);
 }
@@ -1269,6 +1221,8 @@ footer p {
   color: #0061c2;
 }
 
+/* GitHub Card */
+
 #github-card:hover {
   background: linear-gradient(135deg, rgba(132, 110, 255, 0.2) 0%, rgba(51, 0, 190, 0.2) 100%);
 }
@@ -1276,6 +1230,8 @@ footer p {
 #github-card:hover i {
   color: #4600c9;
 }
+
+/* Instagram Card */
 
 #instagram-card:hover {
   background: linear-gradient(45deg, 
@@ -1289,6 +1245,8 @@ footer p {
   color: #cf00ad;
 }
 
+/* Email Card */
+
 #email-card:hover {
   background: linear-gradient(135deg, rgba(255, 165, 0, 0.1) 0%, rgba(255, 140, 0, 0.2) 100%);
 }
@@ -1296,6 +1254,8 @@ footer p {
 #email-card:hover i {
   color: #ff8c00;
 }
+
+/* Responsive Styles for Mobile Devices */
 
 @media screen and (max-width: 768px) {
   .socials-section {
@@ -1352,6 +1312,7 @@ footer p {
 }
 
 /* Contact info row styling */
+
 .bio-contact-info {
   display: flex;
   align-items: center;

@@ -74,7 +74,7 @@ video {
   display: flex;
   flex-grow: 1;
   align-self: stretch;
-  gap: 1.6vw;
+  gap: 4vw;
 }
 
 .flex-container-column {
@@ -186,7 +186,7 @@ p {
   margin-bottom: 1em;
   border-radius: 36px;
   background-color: var(--color-light-background);
-  gap: 4vw;
+  gap: 6vw;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -431,7 +431,7 @@ p {
   position: relative;
   transform-origin: center center;
   transform-style: preserve-3d;
-  width: 20vw;
+  width: 16vw;
   aspect-ratio: 9 / 20;
   transition: all 0.3s ease-in-out;
   outline: 4px ridge rgba(0, 0, 0, 0.06);
@@ -468,11 +468,4 @@ p {
   transform: rotateY(10deg);
   left: -8%; /* Center horizontally */
   top: -4%; /* Center vertically */
-}
-
-.mockup:hover {
-  transform: scale(1.1) rotateY(5deg);
-  transition: all 0.3s ease-out;
-  box-shadow: var(--shadow-elevation-medium), inset 2px 2px 80px rgba(255, 255, 255, 0.9) , 0 0 30px rgba(111, 0, 255, 0.1);
-  z-index: 10;
 }

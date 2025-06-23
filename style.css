@@ -68,7 +68,7 @@ a {
 
 body {
   background: var(--color-white);
-  margin: 1em 20vw;
+  margin: 1em 8vw;
   line-break: auto;
   color: var(--color-dark-text);
 
@@ -729,9 +729,15 @@ h3 {
   font-weight: 500;
 }
 
+h4 {
+  font-size: clamp(1.1rem, 2.0vw, 1.5rem);
+  font-weight: 500;
+  color: var(--color-medium-text);
+}
+
 h2,
 h3 {
-  margin: 0;
+  margin: 0 0 0.5em 0;
   color: var(--color-medium-text);;
 }
 
@@ -989,7 +995,7 @@ a:hover {
   order: 2;
   border-radius: 24px;
   object-fit: cover;
-  width: 28%;
+  width: 24%;
   height: auto;
   aspect-ratio: 1/1;
   border: 2px solid rgba(0, 0, 0, 0.05);
@@ -1078,7 +1084,7 @@ a:hover {
  .project-title {
   display: flex;
   flex-direction: column;
-  gap: 0.6em;
+  gap: 1vw;
   order: 1;
   margin: 0;
   width: 42%;
@@ -1094,7 +1100,14 @@ a:hover {
 
 .project-header {
   color: var(--color-dark-text);
-  font-size: clamp(1.4rem, 2.2vw, 2.6rem);
+  font-size: clamp(1.4rem, 2.2vw, 2.8rem);
+  margin: 0;
+  line-height: 120%;
+}
+
+.belief-header {
+  color: var(--color-dark-text);
+  font-size: clamp(1.4rem, 2.2vw, 2.2rem);
   margin: 0;
   line-height: 120%;
 }
@@ -1102,7 +1115,7 @@ a:hover {
 .project-sub {
   color: var(--color-medium-text);;
   line-height: 150%;
-  font-size: clamp(1rem, 1.2vw, 1.6rem);
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
   margin: 0;
 }
 
@@ -1338,7 +1351,7 @@ footer p {
 .designer-title {
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--color-medium-text);
 }
 
 .social-icons {
@@ -1438,13 +1451,13 @@ video {
   display: flex;
   flex-grow: 1;
   align-self: stretch;
-  gap: 1.6vw;
+  gap: 4vw;
 }
 
 .flex-container-column {
   display: flex;
   flex-direction: column;
-  gap: 1.8vh;
+  gap: 2vh;
   width: 48%;
   }
 
@@ -1550,7 +1563,7 @@ p {
   margin-bottom: 1em;
   border-radius: 36px;
   background-color: var(--color-light-background);
-  gap: 4vw;
+  gap: 8vw;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -1582,7 +1595,7 @@ p {
 /* Icon styles */
 .bento-box i {
   font-size: clamp(2rem, 2vw, 3.4rem);
-  margin-bottom: 1vw;
+  margin-bottom: 0.2vw;
   padding: 1rem;
 }
 
@@ -1634,7 +1647,7 @@ p {
 @media screen and (max-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(1, 1fr) !important;
-    grid-gap: 4vw;
+    grid-gap: 2vw;
   }
 
   .grid-item-large {
@@ -1707,7 +1720,7 @@ p {
   color: var(--rubato-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   #text-with-max-width,
   #text-with-max-width-50,
   #text-left-padding,
@@ -1739,6 +1752,7 @@ p {
 
   .flex-container-column {
     width: 100%;
+    gap: 1.6vw;
   }
 
   .project-gallery,
@@ -1796,49 +1810,78 @@ p {
   position: relative;
   transform-origin: center center;
   transform-style: preserve-3d;
-  width: 20vw;
+  width: 12vw;
   aspect-ratio: 9 / 20;
   transition: all 0.3s ease-in-out;
   outline: 4px ridge rgba(0, 0, 0, 0.06);
 }
 
-@media (max-width: 768px) {
-.mockup{
-    width: 100%;
-    border-radius: 12px;
-  }
-
-  .mockup-container {
-    padding: 0vw;
-  }
-}
-
 .mockup:nth-child(1) {
   background-image: url('Rubato/rubato_mockup_1.png');
-  transform: rotateY(30deg);
-  left: 10%; /* Center horizontally */
-  top: 4%; /* Center vertically */
+  /* 3D tilt and shadow for left card */
+  transform: translateY(-12%) translateX(-18%) rotateY(28deg) rotateZ(-10deg) scale(0.9);
+  z-index: 1;
+  box-shadow:
+    0 24px 48px 0 rgba(183, 141, 228, 0.12),
+    0 2px 24px 0 rgba(80, 40, 120, 0.10),
+    var(--shadow-elevation-low);
+  filter: brightness(0.96) blur(0.4px);
 }
 
 .mockup:nth-child(2) {
   background-image: url('Rubato/rubato_mockup_2.png');
-  transform: rotateY(20deg);
-  left: 0%; /* Center horizontally */
-  top: 0%; /* Center vertically */
-
+  /* Center card pops forward */
+  transform: translateY(0%) translateX(0%) rotateY(0deg) scale(1.1);
+  z-index: 3;
+  box-shadow:
+    0 32px 64px 0 rgba(183, 141, 228, 0.18),
+    0 8px 32px 0 rgba(80, 40, 120, 0.12),
+    var(--shadow-elevation-medium);
+  filter: brightness(1.03) saturate(1.04);
 }
 
 .mockup:nth-child(3) {
   background-image: url('Rubato/rubato_mockup_3.png');
-  transform: rotateY(10deg);
-  left: -8%; /* Center horizontally */
-  top: -4%; /* Center vertically */
+  /* 3D tilt and shadow for right card */
+  transform: translateY(12%) translateX(18%) rotateY(-28deg) rotateZ(10deg) scale(0.9);
+  z-index: 2;
+  box-shadow:
+    0 24px 48px 0 rgba(183, 141, 228, 0.12),
+    0 2px 24px 0 rgba(80, 40, 120, 0.10),
+    var(--shadow-elevation-low);
+  filter: brightness(0.96) blur(0.4px);
 }
 
+/* Minimal hover state for mockups */
 .mockup:hover {
-  transform: scale(1.1) rotateY(5deg);
-  transition: all 0.3s ease-out;
-  box-shadow: var(--shadow-elevation-medium), inset 2px 2px 80px rgba(255, 255, 255, 0.9) , 0 0 30px rgba(111, 0, 255, 0.1);
-  z-index: 10;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-elevation-medium);
+  filter: brightness(1.04);
+  z-index: 4;
+  outline: none;
+  cursor: pointer;
+    outline: 4px ridge rgba(231, 111, 255, 0.1);
 }
 
+@media (max-width: 1080px) {
+.mockup-container {
+    min-height: 60vw; /* Adjust based on viewport height */
+  }
+.mockup{
+    width: 16vw;
+    border-radius: 16px;
+  }
+  
+.mockup:nth-child(1) {
+  /* 3D tilt and shadow for left card - mobile: less tilt, more stacking */
+  transform: translateY(-32%) translateX(-8%) rotateY(12deg) rotateZ(-5deg) scale(0.96);
+}
+.mockup:nth-child(2) {
+  /* Center card pops forward - mobile: slightly smaller scale */
+  transform: translateY(0%) translateX(0%) rotateY(0deg) scale(1.4);
+}
+.mockup:nth-child(3) {
+  /* 3D tilt and shadow for right card - mobile: less tilt, more stacking */
+  transform: translateY(32%) translateX(8%) rotateY(-12deg) rotateZ(5deg) scale(0.96);
+}
+}

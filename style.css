@@ -249,7 +249,7 @@ i {
 }
 
 /* Media Queries */
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
   body {
     margin: 0 6vw;
   }
@@ -278,7 +278,7 @@ i {
   flex-direction: column;
   overflow: visible;
   text-overflow: ellipsis;
-	font-size: clamp(1.8em, 6vw, 6rem);
+	font-size: clamp(2em, 6vw, 6rem);
   flex-grow: 1;
   align-items: center;
   justify-content: center;
@@ -664,6 +664,12 @@ i {
   border-radius: 24px;
 }
 
+@media screen and (max-width: 768px) {
+  .front img, .back img {
+    border-radius: 16px;
+  }
+}
+
 .back {
   transform: rotateY(180deg);
 }
@@ -712,20 +718,20 @@ iframe {
 /* Text styles */
 
 h1 {
-  font-size: clamp(2rem, 10vw, 5rem);
+  font-size: clamp(2rem, 8vw, 4rem);
   margin: 0;
   line-height: 110%;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h2 {
-  font-size: clamp(1.1rem, 4vw, 2.2rem);
+  font-size: clamp(1.3rem, 4vw, 2.2rem);
   max-width: 80%;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h3 {
-  font-size: clamp(1.1rem, 3vw, 2rem);
+  font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: 500;
 }
 
@@ -890,6 +896,7 @@ p {
     padding: 0em 0.8em;
     height: 40px;
     width: max-content;
+    border-radius: 24px;
   }
 }
 
@@ -900,11 +907,11 @@ p {
 .hero {
   width: 100%;
   height: 60vh;
-/* padding: 0; */
 padding: 8vw;
 box-sizing: border-box;
 min-height: 86vh;
   max-width: auto;
+  border-radius: 24px;
 }
 
 .bio-section { /* Add this rule */
@@ -1125,7 +1132,8 @@ a:hover {
   .project {
     flex-direction: column;
     gap: 1em;
-    padding: 1.6em;
+    padding: 6vw;
+    border-radius: 24px;
   }
 
   .project-title {
@@ -1144,9 +1152,9 @@ a:hover {
     transform: translateX(0%);
     opacity: 1;
   }
-
   .works img {
     width: 100%;
+    border-radius: 16px;
   }
 }
 
@@ -1277,9 +1285,9 @@ footer p {
     gap: 4%;
 
   }
-
   .social-card {
     padding: 1.6em;
+    border-radius: 24px;
   }
 }
 
@@ -1410,6 +1418,12 @@ video {
 	border-radius: 24px;
 }
 
+@media screen and (max-width: 768px) {
+  video {
+    border-radius: 16px;
+  }
+}
+
 /* Styles for the desktop image */
 .desktop-image {
   display: block; /* Show the image on desktop */
@@ -1439,6 +1453,12 @@ video {
   border-radius: 24px;
   flex: 1;
   height: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .youtube-video {
+    border-radius: 16px;
+  }
 }
 
 .project-gallery {
@@ -1471,20 +1491,24 @@ video {
   display: flex;
   flex: 1 1 auto;
   height: 100%;
-}
+}  .flex-item img {
+    border-radius: 24px;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
 
-.flex-item img {
-  border-radius: 24px;
-  object-fit: contain;
-  width: 100%;
-  height: auto;
-}
+  @media screen and (max-width: 768px) {
+    .flex-item img {
+      border-radius: 16px;
+    }
+  }
 
-#flex-caption {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  #flex-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
 .figcaption {
   padding-top: 1rem;
@@ -1512,37 +1536,43 @@ video {
   flex-direction: column;
   flex-basis: 23%;
   gap: 2.4vw;
-}
-
-.column-gallery-flex img,
-.column-gallery-flex video {
-  vertical-align: middle;
-  width: 100%;
-  border-radius: 24px;
-}
-
-@media screen and (max-width: 768px) {
-  .column-gallery-flex {
-    flex-basis: 49%; /* Set the initial size to 40% minus the gap */
-    gap: 5vw;
+}  .column-gallery-flex img,
+  .column-gallery-flex video {
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 24px;
   }
 
-  #gallery-flex {
-    gap: 5vw;
-  }
-}
+  @media screen and (max-width: 768px) {
+    .column-gallery-flex {
+      flex-basis: 49%; /* Set the initial size to 40% minus the gap */
+      gap: 5vw;
+    }
 
-@media screen and (max-width: 768px) {
-  .column-gallery-flex {
-    flex-basis: 100%; /* Set the initial size to 100% */
-    max-width: 100%; /* Set the maximum width to 100% */
-    gap: 5vw;
-  }
+    .column-gallery-flex img,
+    .column-gallery-flex video {
+      border-radius: 16px;
+    }
 
-  #gallery-flex {
-    gap: 5vw;
+    #gallery-flex {
+      gap: 5vw;
+    }
+  }  @media screen and (max-width: 768px) {
+    .column-gallery-flex {
+      flex-basis: 100%; /* Set the initial size to 100% */
+      max-width: 100%; /* Set the maximum width to 100% */
+      gap: 5vw;
+    }
+
+    .column-gallery-flex img,
+    .column-gallery-flex video {
+      border-radius: 16px;
+    }
+
+    #gallery-flex {
+      gap: 5vw;
+    }
   }
-}
 
 /* Text boxes */
 #text-with-max-width,
@@ -1578,7 +1608,7 @@ p {
 .bento-box {
   display: flex;
   padding: 8%;
-  font-size: clamp(1.2rem, 1.6vw, 2rem);
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
   font-weight: 600;
   line-height: 120%;
   letter-spacing: -0.5px;
@@ -1604,6 +1634,7 @@ p {
   .bento-box {
     flex: auto;
     padding: 8%;
+    border-radius: 16px;
   }
 }
 
@@ -1650,6 +1681,10 @@ p {
     grid-gap: 2vw;
   }
 
+  .grid-container img {
+    border-radius: 16px;
+  }
+
   .grid-item-large {
     grid-column: span 1;
   }
@@ -1676,6 +1711,12 @@ p {
   will-change: outline;
   transition: background-color 0.3s ease-out;
   box-shadow: var(--shadow-elevation-low);
+}
+
+@media screen and (max-width: 768px) {
+  #bio-card {
+    border-radius: 24px;
+  }
 }
 
 #value-title {
@@ -1744,7 +1785,8 @@ p {
 
   .project-container {
     padding: 8vw 6vw;
-    gap: 12vw;
+    gap: 8vw;
+    border-radius: 16px;
   }
   .project-description {
     max-width: 100%;
@@ -1757,7 +1799,7 @@ p {
 
   .project-gallery,
   .flex-container-row {
-    gap: 5vw;
+    gap: 4vw;
     flex-direction: column;
   }
 
@@ -1770,6 +1812,12 @@ p {
 #rubato-mockups {
   background: linear-gradient(35deg, #b78de4, #f0f0f0);
   border-radius: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  #rubato-mockups {
+    border-radius: 16px;
+  }
 }
 
 .mockup-container {
@@ -1869,7 +1917,7 @@ p {
   }
 .mockup{
     width: 16vw;
-    border-radius: 16px;
+    border-radius: 8px;
   }
   
 .mockup:nth-child(1) {
@@ -1884,4 +1932,12 @@ p {
   /* 3D tilt and shadow for right card - mobile: less tilt, more stacking */
   transform: translateY(32%) translateX(8%) rotateY(-12deg) rotateZ(5deg) scale(0.96);
 }
+}
+
+/* Section Divider */
+.section-divider {
+  border: none;
+  border-bottom: 1.5px solid #d8d8d8;
+  width: 100%;
+  background: none;
 }

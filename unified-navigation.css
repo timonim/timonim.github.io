@@ -1,0 +1,1507 @@
+:root {
+  /* Layout */
+  --nav-max-width: 720px;
+  --nav-padding: 1rem;
+  --nav-gap: 2em;
+  --nav-container-padding: 0.4em 0.8em;
+  --nav-border-radius: var(--radius-large, 12px);
+  
+  /* Colors */
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: #dddddd;
+  --nav-shadow: 0 8px 32px rgba(255, 153, 0, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9),
+                inset 0 -1px 0 rgba(255, 234, 204, 0.3);
+  
+  /* Transitions */
+  --transition-nav: all var(--transition-main, 0.2s ease);
+  
+  /* Z-index */
+  --z-nav: 1000;
+  
+  /* Compact mode variables */
+  --compact-padding: 0.5rem;
+  --compact-container-padding: 0.25em 0.4em;
+  --compact-gap: 0.5em;
+  --compact-button-gap: 0.35em;
+  --compact-logo-height: 2em;
+  --compact-border-radius: 50px;
+  --compact-button-radius: 20px;
+  --compact-icon-size: 1.1rem;
+  --compact-nav-icon-size: 22px;
+  --compact-transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --compact-hover-scale: 1.05;
+  --compact-container-hover-scale: 1.01;
+  --compact-logo-hover-scale: 1.08;
+  --compact-square-size: 40px;
+}
+
+/* 
+ * Unified Navigation Styles
+ * Single source of truth for all navigation across the site
+ */
+
+/* Base Navigation Styles */
+.unified-navigation {
+  position: sticky;
+  top: 0;
+  left: auto;
+  z-index: var(--z-nav);
+  display: flex;
+  justify-content: center;
+  transition: var(--transition-nav);
+  transform: none;
+  width: min(100% - 2rem, var(--nav-max-width));
+  max-width: var(--nav-max-width);
+  padding: var(--nav-padding);
+  will-change: transform, opacity;
+}
+
+
+/* Hide/show behavior - unified for all contexts */
+.unified-navigation.hide {
+  transform: translateY(-120%);
+  opacity: 0.8;
+}
+
+/* Navigation Container - core glassmorphism design */
+.nav-container {
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--nav-border);
+  box-shadow: var(--nav-shadow);
+  border-radius: var(--nav-border-radius);
+  padding: var(--nav-container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nav-gap);
+  width: auto;
+  height: auto;
+  transition: var(--transition-nav);
+  will-change: transform, background, box-shadow, opacity;
+  max-width: 90vw;
+}
+
+/* Context-specific container sizing */
+.project-nav .nav-container {
+  --nav-gap: 1.5em;
+  --nav-container-padding: 0.5em 1em;
+}
+
+.homepage-nav .nav-container,
+.simple-nav .nav-container {
+  min-width: 18em;
+  --nav-gap: 2em;
+  justify-content: space-between;
+}
+
+/* Desktop entrance animation setup - removed initial hidden state to avoid empty space */
+@media (min-width: 1024px) {
+  .unified-navigation,
+  .nav-container {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Animation keyframes */
+@keyframes navEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Show state with animation */
+.unified-navigation.show,
+.unified-navigation.show .nav-container {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ========================================
+   COMPACT MODE STYLES
+   ======================================== */
+
+/* CSS Custom Properties for Compact Mode */
+:root {
+  --compact-padding: 0.5rem;
+  --compact-container-padding: 0.25em 0.4em;
+  --compact-gap: 0.5em;
+  --compact-button-gap: 0.35em;
+  --compact-logo-height: 2.0em;
+  --compact-border-radius: 50px;
+  --compact-button-radius: 20px;
+  --compact-icon-size: 1.1rem;
+  --compact-nav-icon-size: 22px;
+  --compact-transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --compact-hover-scale: 1.05;
+  --compact-container-hover-scale: 1.01;
+  --compact-logo-hover-scale: 1.08;
+  --compact-square-size: 40px; /* size for square icon buttons in compact mode */
+}
+
+/* Compact mode is activated on desktop scroll for a condensed navigation experience */
+@media (min-width: 1024px) {
+  .unified-navigation.compact {
+    --nav-padding: var(--compact-padding);
+    transition: var(--compact-transition);
+    will-change: padding;
+  }
+  
+  .unified-navigation.compact .nav-container {
+    --nav-bg: rgba(255, 255, 255, 0.82);
+    --nav-container-padding: var(--compact-container-padding);
+    --nav-gap: var(--compact-gap);
+    --nav-border-radius: var(--compact-border-radius);
+    
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+    border-color: var(--nav-border);
+    box-shadow: 
+      0 6px 18px rgba(255, 153, 0, 0.08),
+      0 2px 6px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -1px 0 rgba(255, 234, 204, 0.25);
+    transition: var(--compact-transition);
+    will-change: padding, gap, border-radius, background, box-shadow;
+  }
+  
+  /* ========================================
+     COMPACT MODE: LOGO ADJUSTMENTS
+     ======================================== */
+  
+  .unified-navigation.compact .logo-image {
+    height: var(--compact-logo-height);
+    transition: var(--compact-transition);
+    will-change: height;
+  }
+  
+  /* ========================================
+     COMPACT MODE: BUTTON OPTIMIZATIONS
+     ======================================== */
+  
+  /* Universal button padding reduction for compact mode */
+  .unified-navigation.compact .ghost-button,
+  .unified-navigation.compact .secondary-button,
+  .unified-navigation.compact .tertiary-button {
+    padding: var(--compact-container-padding);
+    gap: var(--compact-button-gap);
+    transition: var(--compact-transition);
+    will-change: padding, gap;
+  }
+  
+  /* Hide text labels to save space - icon-first approach */
+  .unified-navigation.compact .dropdown-text,
+  .unified-navigation.compact .button-text {
+    display: none;
+  }
+  
+  /* Contact button specific compact styling */
+  .unified-navigation.compact .contact-link .secondary-button {
+    width: var(--compact-square-size);
+    height: var(--compact-square-size);
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* circle in compact mode */
+    min-width: 0;
+    transition: var(--compact-transition);
+  }
+
+  /* Ensure contact icon is sized and centered nicely in compact */
+  .unified-navigation.compact .contact-link .secondary-button .material-symbols-outlined {
+    font-size: var(--compact-icon-size);
+    line-height: 1;
+  }
+  
+  /* ========================================
+     COMPACT MODE: PROJECT NAVIGATION
+     ======================================== */
+  
+  /* Project navigation controls optimization */
+  .unified-navigation.compact .project-nav-controls {
+    gap: var(--compact-button-gap);
+    transition: var(--compact-transition);
+  }
+  
+  /* Hide project navigation text in compact mode */
+  .unified-navigation.compact .project-nav-controls .nav-text {
+    display: none;
+  }
+  
+  /* Previous/Next button compact styling */
+  .unified-navigation.compact .prev-next-link.tertiary-button {
+    padding: 0.4em 0.6em;
+    border-radius: var(--compact-button-radius);
+    min-width: unset;
+    gap: 0.4em;
+    transition: var(--compact-transition);
+  }
+  
+  /* ========================================
+     COMPACT MODE: ICON ADJUSTMENTS
+     ======================================== */
+  
+  /* Standardized icon sizes for compact mode */
+  .unified-navigation.compact .project-nav-controls .material-symbols-outlined {
+    font-size: var(--compact-nav-icon-size);
+    transition: var(--compact-transition);
+  }
+  
+  .unified-navigation.compact .dropdown-toggle .material-symbols-outlined,
+  .unified-navigation.compact .prev-next-link .material-symbols-outlined {
+    font-size: var(--compact-icon-size);
+    transition: var(--compact-transition);
+  }
+  
+  /* ========================================
+     COMPACT MODE: DROPDOWN OPTIMIZATIONS
+     ======================================== */
+  
+  /* Projects dropdown compact styling */
+  .unified-navigation.compact .projects-dropdown .dropdown-toggle {
+    padding: var(--compact-container-padding);
+    gap: var(--compact-button-gap);
+    transition: var(--compact-transition);
+  }
+  
+  /* Ensure dropdown menu positioning remains consistent */
+  .unified-navigation.compact .dropdown-menu {
+    top: calc(100% + 6px);
+  }
+  
+  /* ========================================
+     COMPACT MODE: ENHANCED INTERACTIONS
+     ======================================== */
+  
+  /* Enhanced hover states for compact mode */
+  .unified-navigation.compact .nav-container:hover {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 
+      0 8px 24px rgba(255, 153, 0, 0.12),
+      0 4px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(255, 234, 204, 0.4);
+  }
+  
+  /* Compact button hover optimizations */
+  .unified-navigation.compact .ghost-button:hover,
+  .unified-navigation.compact .secondary-button:hover,
+  .unified-navigation.compact .tertiary-button:hover {
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.15);
+  }
+
+  /* Avoid scaling prev/next buttons to keep tooltip text crisp */
+  .unified-navigation.compact .prev-next-link.tertiary-button:hover {
+    transform: translateY(-1px); /* no scale to avoid tooltip blur */
+  }
+  
+  /* Logo hover effect in compact mode */
+  .unified-navigation.compact .logo-link:hover {
+    transform: scale(1.08);
+  }
+  
+  /* ========================================
+     COMPACT MODE: ACCESSIBILITY ENHANCEMENTS
+     ======================================== */
+  
+  /* Enhanced focus states for compact mode */
+  .unified-navigation.compact .logo-link:focus,
+  .unified-navigation.compact .ghost-button:focus,
+  .unified-navigation.compact .secondary-button:focus,
+  .unified-navigation.compact .tertiary-button:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.2);
+  }
+  
+  /* Compact mode tooltip support for icon-only buttons */
+  .unified-navigation.compact [title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateZ(0);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
+    filter: none;
+    contain: paint;
+  }
+  
+  /* ========================================
+     COMPACT MODE: PERFORMANCE OPTIMIZATIONS
+     ======================================== */
+  
+  /* GPU acceleration for smooth animations */
+  .unified-navigation.compact,
+  .unified-navigation.compact .nav-container,
+  .unified-navigation.compact .logo-image,
+  .unified-navigation.compact .ghost-button,
+  .unified-navigation.compact .secondary-button,
+  .unified-navigation.compact .tertiary-button {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* Responsive: keep unified navigation sticky at top on smaller screens */
+@media (max-width: 1080px) {
+  .unified-navigation {
+    position: sticky;
+    top: 0;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    z-index: 1001;
+  }
+
+  .unified-navigation .nav-container {
+    border-radius: 16px;
+    padding: 0.6rem 0.9rem;
+    gap: 1.2rem;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    backdrop-filter: blur(16px) saturate(160%);
+    box-shadow:
+      0 8px 24px rgba(0,0,0,0.12),
+      0 2px 6px rgba(0,0,0,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.8);
+  }
+
+  /* Hide/show for top sticky */
+  .unified-navigation.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .unified-navigation.hide {
+    transform: translateY(-120%);
+  }
+
+  /* Hide contact link in header on mobile; keep only in bottom sheet */
+  .unified-navigation .contact-link { display: none !important; }
+
+  /* Optimize layout: hide project controls/right section on mobile */
+  .project-nav-controls { display: none; }
+  .nav-right-section { display: none; }
+
+  /* Ensure mobile menu toggle is visible */
+  .mobile-menu-toggle { display: flex; }
+
+  /* Adjust logo size for dock */
+  .logo-image { height: 2.4em; }
+}
+
+/* Enhanced hover effects */
+.nav-container:hover {
+  background: rgba(255, 253, 248, 0.95);
+  box-shadow: 
+    0 12px 40px rgba(255, 153, 0, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 234, 204, 0.5);
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(var(--color-accent-rgb, 255,153,0), 0.3);
+}
+
+/* Keep tooltip crisp: avoid scaling container while prev/next is active */
+.nav-container:has(.prev-next-link:hover):hover,
+.nav-container:has(.prev-next-link:focus-visible):hover {
+  transform: translateY(-2px); /* remove scale to prevent text blur */
+}
+
+/* Backward-compatible native header rules (moved from style.css) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  padding: 0.4em 0.8em;
+  box-shadow:
+    0 8px 32px rgba(255, 153, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(255, 234, 204, 0.3);
+  transition: all var(--transition-main);
+  border-radius: var(--radius-large);
+  gap: 1.8em;
+  width: auto;
+  min-width: 18em;
+  height: auto;
+  border: 1px solid #dddddd;
+  will-change: transform, background, box-shadow, opacity;
+}
+
+@media (min-width: 1024px) {
+  header { opacity: 0; transform: translateX(-50%) translateY(-30px) scale(0.95); }
+}
+
+header.show { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+header.hide {
+  transform: translateX(-50%) translateY(-120%);
+  opacity: 0.8;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+header:hover {
+  background: rgba(255, 253, 248, 0.95);
+  box-shadow:
+    0 12px 40px rgba(255, 153, 0, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 234, 204, 0.5);
+  transform: translateX(-50%) translateY(-2px) scale(1.02);
+  border-color: rgba(var(--color-accent-rgb, 255,153,0), 0.3);
+}
+
+@media (max-width: 1080px) {
+  header {
+    position: sticky;
+    top: 1%;
+    left: auto;
+    transform: none;
+    /* Center and constrain width on mobile */
+    margin: 1em auto;
+    width: min(100% - 2em, 720px);
+    max-width: 720px;
+    min-width: auto;
+    padding: 0.6em 1em;
+    will-change: transform, background, box-shadow, opacity;
+    opacity: 1;
+  }
+
+  header.show { opacity: 1; transform: none; }
+  header.hide { transform: translateY(-120%); opacity: 0.8; }
+  header:hover { transform: translateY(-1px) scale(1.01); }
+}
+
+/* Child element rules (logo, image) kept for header compatibility */
+header > * { flex: 0 0 auto; }
+header img { width: 3.4rem; transition: all var(--transition-main); }
+.logo-link { display: flex; border-radius: 50%; padding: 0.2em; transition: all var(--transition-main); }
+.logo-link:hover { background: rgba(255, 153, 0, 0.08); transform: scale(1.02); }
+.logo-image { transition: all var(--transition-main); border-radius: 50%; filter: drop-shadow(0 2px 4px rgba(255,153,0,0.1)); }
+.logo-link:hover .logo-image { filter: drop-shadow(0 4px 8px rgba(255,153,0,0.2)); }
+
+/* Logo Styles - Universal */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all var(--transition-main);
+  border-radius: 50%;
+  padding: 0.2em;
+  flex-shrink: 0;
+}
+
+.logo-link:hover {
+  background: rgba(255, 153, 0, 0.08);
+  transform: scale(1.02);
+}
+
+:root {
+  /* Logo */
+  --logo-height: 2.8em;
+  --logo-transition: all var(--transition-main);
+}
+
+.logo-image {
+  height: var(--logo-height);
+  width: auto;
+  transition: var(--logo-transition);
+}
+
+/* Contact Button - Use existing design system */
+.contact-link {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+/* Remove custom secondary-button styles - use the ones from style.css instead */
+
+/* Project Navigation Controls - Only for project pages */
+.project-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 0.5rem;
+  /* Allow buttons to size to content */
+  flex-wrap: nowrap;
+}
+
+/* Hide project controls on non-project pages */
+.homepage-nav .project-nav-controls,
+.simple-nav .project-nav-controls {
+  display: none;
+}
+
+/* Navigation Right Section - Only for project pages */
+.nav-right-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.homepage-nav .nav-right-section {
+  display: none;
+}
+
+/* Previous/Next Links - Use design system tertiary button style */
+/* All styling comes from .tertiary-button in style.css */
+
+/* Navigation Text */
+.nav-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.nav-text .nav-label {
+  font-size: 0.7rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+  font-weight: 500;
+  margin-bottom: 1px;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+.nav-text .nav-project-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+  transition: all 0.2s ease;
+}
+
+/* Next button (second child) - align text to the right */
+.prev-next-link:nth-child(2) .nav-text {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Ensure proper button content alignment */
+.prev-next-link.tertiary-button {
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-width: 170px;
+  /* max-width: 220px; */
+  /* padding: 0.7em 1.2em; */
+  white-space: nowrap;
+  border-radius: 28px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Prev/Next tooltips - show below the bar */
+.prev-next-link[title]:hover::after,
+.prev-next-link[title]:focus-visible::after {
+  content: attr(title);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateZ(0);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 2000;
+  pointer-events: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  backface-visibility: hidden;
+  filter: none;
+  contain: paint;
+}
+
+/* Override to show full project names in prev/next buttons */
+.prev-next-link.tertiary-button {
+  /* Allow buttons to expand according to content rather than forcing a min width */
+  min-width: unset;
+  width: auto;
+  max-width: none; /* allow full name on one line */
+  padding: 0.7em 1.1em;
+  overflow: visible; /* ensure long single-line text not clipped */
+}
+
+.nav-text .nav-project-name {
+  /* Show full project name on one line */
+  max-width: none;
+  overflow: visible;
+  text-overflow: unset;
+  white-space: nowrap; /* force single line */
+  line-height: 1.15;
+}
+
+/* Keep labels single line; container can still adapt */
+.nav-text {
+  white-space: nowrap; /* revert to single line for project names */
+  overflow: visible;
+}
+
+/* Enhanced hover effects for navigation buttons */
+.prev-next-link.tertiary-button:hover {
+  /* subtle lift only when text doesn't wrap heavily */
+  transform: translateY(-1px);
+}
+
+.prev-next-link.tertiary-button:hover .nav-text .nav-label {
+  opacity: 1;
+  color: var(--color-accent);
+}
+
+.prev-next-link.tertiary-button:hover .nav-text .nav-project-name {
+  color: var(--color-accent);
+}
+
+.prev-next-link.tertiary-button:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
+}
+
+/* Previous button - icon on left, text on right */
+.prev-next-link:first-child.tertiary-button {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* Next button - text on left, icon on right */
+.prev-next-link:nth-child(2).tertiary-button {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/* Add subtle visual hierarchy */
+.prev-next-link.tertiary-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.05), rgba(255, 153, 0, 0.02));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.prev-next-link.tertiary-button:hover::before {
+  opacity: 1;
+}
+
+/* Icon styling within nav buttons */
+:root {
+  /* Navigation Icons */
+  --nav-icon-size: 1.3rem;
+  --nav-icon-color: #666;
+  --nav-icon-transition: all 0.2s ease;
+}
+
+.prev-next-link .material-symbols-outlined {
+  font-size: var(--nav-icon-size);
+  flex-shrink: 0;
+  transition: var(--nav-icon-transition);
+  color: var(--nav-icon-color);
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Icon hover effects */
+.prev-next-link.tertiary-button:hover .material-symbols-outlined {
+  color: #ff9900;
+  transform: scale(1.1);
+}
+
+/* Previous button icon animation */
+.prev-next-link:first-child.tertiary-button:hover .material-symbols-outlined {
+  transform: translateX(-2px);
+}
+
+/* Next button icon animation */
+.prev-next-link:nth-child(2).tertiary-button:hover .material-symbols-outlined {
+  transform: translateX(2px);
+}
+
+/* Projects Dropdown - Use design system secondary button style */
+.projects-dropdown {
+  position: relative;
+}
+
+/* All button styling comes from .secondary-button in style.css */
+
+.dropdown-toggle .material-symbols-outlined {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-toggle.active .material-symbols-outlined:last-child {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid #dddddd;
+  border-radius: var(--radius-small);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-main);
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 153, 0, 0.1);
+  color: var(--color-accent);
+}
+
+.dropdown-item.active {
+  background-color: rgba(255, 153, 0, 0.15);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.project-name {
+  font-size: 0.9rem;
+}
+
+/* Accessibility Focus Styles */
+.logo-link:focus,
+.prev-next-link:focus,
+.dropdown-toggle:focus,
+.secondary-button:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.2);
+}
+
+/* Enhanced focus for navigation buttons */
+.prev-next-link.tertiary-button:focus {
+  outline: 2px solid #ff9900;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.2), 0 4px 12px rgba(255, 153, 0, 0.15);
+}
+
+.prev-next-link.tertiary-button:focus .nav-text .nav-label,
+.prev-next-link.tertiary-button:focus .nav-text .nav-project-name {
+  color: #ff9900;
+}
+
+.prev-next-link.tertiary-button:focus .material-symbols-outlined {
+  color: #ff9900;
+}
+
+.dropdown-item:focus {
+  background-color: rgba(255, 153, 0, 0.1);
+  color: #ff9900;
+  outline: none;
+}
+
+/* Global box-sizing */
+.unified-navigation * {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   MOBILE NAVIGATION STYLES
+   ======================================== */
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  z-index: 1010;
+  border-radius: var(--radius-small);
+  transition: background 0.2s ease;
+  position: relative;
+  min-width: 44px;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(255, 153, 0, 0.08);
+}
+
+.mobile-menu-toggle:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Hamburger Lines */
+.mobile-menu-toggle span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--color-dark-text);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  position: absolute;
+  left: 50%;
+  transform-origin: center;
+}
+
+.mobile-menu-toggle span:nth-child(1) {
+  top: 0.5rem;
+  transform: translateX(-50%);
+}
+
+.mobile-menu-toggle span:nth-child(2) {
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.mobile-menu-toggle span:nth-child(3) {
+  bottom: 0.5rem;
+  transform: translateX(-50%);
+}
+
+/* Active State Animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  bottom: 50%;
+  transform: translateX(-50%) translateY(50%) rotate(-45deg);
+}
+
+/* Mobile Menu Container */
+:root {
+  /* Mobile Menu */
+  --mobile-menu-bg: rgba(0, 0, 0, 0.3);
+  --mobile-menu-z: 2000;
+  --mobile-menu-transition: all 0.3s ease;
+  --mobile-menu-blur: 4px;
+  --mobile-menu-panel-bg: rgba(255, 255, 255, 0.98);
+  --mobile-menu-panel-blur: 16px;
+  --mobile-menu-panel-radius: 16px;
+  --mobile-menu-panel-shadow: 0 -8px 24px rgba(0, 0, 0, 0.1);
+  --mobile-menu-panel-max-height: 80vh;
+  --mobile-menu-panel-max-width: 500px;
+  --mobile-menu-panel-padding: 1rem;
+}
+
+.mobile-menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--mobile-menu-bg);
+  backdrop-filter: blur(var(--mobile-menu-blur));
+  -webkit-backdrop-filter: blur(var(--mobile-menu-blur));
+  z-index: var(--mobile-menu-z);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--mobile-menu-transition), visibility var(--mobile-menu-transition);
+  pointer-events: none;
+}
+
+.mobile-menu-container.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Bottom Sheet Panel */
+.sheet-panel {
+  background: var(--mobile-menu-panel-bg);
+  backdrop-filter: blur(var(--mobile-menu-panel-blur));
+  -webkit-backdrop-filter: blur(var(--mobile-menu-panel-blur));
+  border-top-left-radius: var(--mobile-menu-panel-radius);
+  border-top-right-radius: var(--mobile-menu-panel-radius);
+  box-shadow: var(--mobile-menu-panel-shadow);
+  padding: var(--mobile-menu-panel-padding);
+  padding-bottom: calc(var(--mobile-menu-panel-padding) + env(safe-area-inset-bottom));
+  max-height: var(--mobile-menu-panel-max-height);
+  width: 100%;
+  max-width: var(--mobile-menu-panel-max-width);
+  transform: translateY(100%);
+  transition: transform var(--mobile-menu-transition);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.mobile-menu-container.active .sheet-panel {
+  transform: translateY(0);
+}
+
+/* Handle */
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  margin: 0 auto 1rem;
+  touch-action: none; /* let JS drag without native scrolling */
+}
+
+
+/* Prevent background scroll when menu is open */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu-container,
+  .mobile-nav-link,
+  .mobile-dropdown-toggle,
+  .mobile-dropdown-menu,
+  .mobile-dropdown-item,
+  .mobile-contact-button .secondary-button {
+    transition: none !important;
+  }
+}
+
+/* Mobile Menu Content */
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Tabs header */
+.mobile-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 0.25rem;
+}
+
+.mobile-tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-dark-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-tab.active {
+  background: rgba(255, 153, 0, 0.15);
+  color: var(--color-accent);
+  box-shadow: 0 2px 8px rgba(255,153,0,0.12) inset;
+}
+
+.mobile-tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Panels */
+.mobile-tabpanel { display: none; }
+.mobile-tabpanel.active { display: block; }
+
+/* Projects list (no search/header) */
+
+/* Projects list + items */
+.mobile-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-projects-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--mobile-item-gap);
+  text-decoration: none;
+  color: var(--color-dark-text);
+  padding: var(--mobile-item-padding);
+  border-radius: var(--mobile-item-radius);
+  background: var(--mobile-item-bg);
+  border: var(--mobile-item-border);
+  transition: var(--mobile-item-transition);
+  min-height: var(--mobile-item-min-height);
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform, background, border-color, box-shadow;
+}
+
+.mobile-projects-item:hover {
+  background: var(--mobile-item-hover-bg);
+  border-color: var(--mobile-item-focus-border);
+  transform: translateY(-1px);
+  box-shadow: var(--mobile-item-shadow-hover);
+}
+
+.mobile-projects-item:focus-visible {
+  background: var(--mobile-item-hover-bg);
+  color: var(--color-accent);
+  border-color: var(--mobile-item-focus-border);
+  transform: translateY(-1px);
+  box-shadow: var(--mobile-item-shadow-hover);
+  outline: var(--mobile-item-focus-outline);
+  outline-offset: var(--mobile-item-focus-offset);
+}
+
+.mobile-projects-item:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--mobile-item-shadow-active);
+}
+
+.mobile-projects-item.active {
+  background: var(--mobile-item-active-bg);
+  border-color: var(--mobile-item-focus-border);
+  color: var(--color-accent);
+}
+
+.mobile-projects-item .project-title {
+  font-size: 1rem;
+  font-weight: 600;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  order: 0 !important; /* Ensure title stays left even if global styles set order */
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  border: 1px solid transparent;
+}
+
+/* Push badge to the far right */
+.mobile-projects-item .badge { margin-left: auto; order: 1 !important; }
+
+.badge.current { background: rgba(0, 180, 90, 0.14); color: #0a7a43; border-color: rgba(0, 180, 90, 0.25); }
+.badge.external { background: rgba(0, 120, 255, 0.12); color: #0a5ab7; border-color: rgba(0, 120, 255, 0.25); }
+
+.mobile-projects-empty {
+  color: #666;
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+/* Mobile Navigation Links */
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-dark-text);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: var(--mobile-item-padding);
+  border-radius: var(--mobile-item-radius);
+  background: var(--mobile-item-bg);
+  border: var(--mobile-item-border);
+  transition: var(--mobile-item-transition);
+  text-align: center;
+  min-height: var(--mobile-item-min-height);
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform, background, border-color, box-shadow;
+}
+
+.mobile-nav-link:hover,
+:root {
+  /* Mobile Interactive Items - Shared styles for nav links and project items */
+  --mobile-item-hover-bg: rgba(255, 153, 0, 0.1);
+  --mobile-item-active-bg: rgba(255, 153, 0, 0.15);
+  --mobile-item-focus-border: rgba(255, 153, 0, 0.4);
+  --mobile-item-focus-outline: 2px solid rgba(255, 153, 0, 0.4);
+  --mobile-item-focus-offset: 2px;
+  --mobile-item-transition: all 0.2s ease;
+  --mobile-item-padding: 1rem 1.2em;
+  --mobile-item-radius: 10px;
+  --mobile-item-gap: 0.75rem;
+  --mobile-item-min-height: 48px;
+  --mobile-item-border: 1px solid #dddddd;
+  --mobile-item-bg: rgba(255, 255, 255, 0.8);
+  --mobile-item-shadow-hover: 0 6px 18px rgba(255, 153, 0, 0.12), 0 2px 6px rgba(0,0,0,0.06);
+  --mobile-item-shadow-active: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-nav-link:hover {
+  background: var(--mobile-item-hover-bg);
+  border-color: var(--mobile-item-focus-border);
+  transform: translateY(-1px);
+  box-shadow: var(--mobile-item-shadow-hover);
+}
+
+.mobile-nav-link:focus-visible {
+  background: var(--mobile-item-hover-bg);
+  color: var(--color-accent);
+  border-color: var(--mobile-item-focus-border);
+  transform: translateY(-1px);
+  box-shadow: var(--mobile-item-shadow-hover);
+}
+
+.mobile-nav-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.mobile-nav-link:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--mobile-item-shadow-active);
+}
+
+.mobile-nav-link.active {
+  background: var(--mobile-item-active-bg);
+  color: var(--color-accent);
+  border-color: var(--mobile-item-focus-border);
+  font-weight: 600;
+}
+
+/* Mobile Projects Dropdown */
+.mobile-projects-dropdown {
+  width: 100%;
+}
+
+.mobile-dropdown-toggle {
+  font-family: var(--font-sans-serif);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-dark-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform, background, border-color, box-shadow;
+}
+
+.mobile-dropdown-toggle:hover {
+  background: rgba(255, 153, 0, 0.1);
+  color: var(--color-accent);
+  border-color: rgba(255, 153, 0, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 153, 0, 0.12), 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.mobile-dropdown-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.mobile-dropdown-toggle:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-dropdown-item:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.mobile-dropdown-toggle .material-symbols-outlined {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+  color: inherit;
+}
+
+.mobile-dropdown-toggle.active {
+  background: rgba(255, 153, 0, 0.15);
+  color: var(--color-accent);
+  border-color: rgba(255, 153, 0, 0.5);
+}
+
+.mobile-dropdown-toggle.active .material-symbols-outlined {
+  transform: rotate(180deg);
+}
+
+/* Mobile Dropdown Menu */
+.mobile-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overscroll-behavior: contain; /* keep scroll within the dropdown */
+  -webkit-overflow-scrolling: touch; /* smooth iOS scrolling */
+}
+
+.mobile-dropdown-menu.show {
+  display: flex;
+}
+
+.mobile-dropdown-item {
+  text-decoration: none;
+  color: var(--color-dark-text);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #dddddd;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform, background, border-color, box-shadow;
+}
+
+.mobile-dropdown-item:hover,
+.mobile-dropdown-item:focus-visible {
+  background: rgba(255, 153, 0, 0.1);
+  color: var(--color-accent);
+  border-color: rgba(255, 153, 0, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 153, 0, 0.12), 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.mobile-dropdown-item:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-dropdown-item.active {
+  background: rgba(255, 153, 0, 0.15);
+  color: var(--color-accent);
+  border-color: rgba(255, 153, 0, 0.4);
+  font-weight: 600;
+  border-left: 3px solid var(--color-accent);
+  padding-left: calc(1rem - 3px);
+}
+
+/* Mobile Contact Button */
+.mobile-contact-button {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.mobile-contact-button .secondary-button {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.15) 0%, rgba(255, 153, 0, 0.1) 100%);
+  border-color: rgba(255, 153, 0, 0.5);
+  box-shadow: 0 12px 32px rgba(255, 153, 0, 0.3), 
+              0 6px 16px rgba(0, 0, 0, 0.15);
+  color: var(--color-accent);
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform, background, border-color, box-shadow;
+}
+
+.mobile-contact-button .secondary-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.15) 0%, rgba(255, 153, 0, 0.1) 100%);
+  border-color: rgba(255, 153, 0, 0.5);
+  box-shadow: 0 12px 32px rgba(255, 153, 0, 0.3), 
+              0 6px 16px rgba(0, 0, 0, 0.15);
+  color: var(--color-accent);
+}
+
+:root {
+  /* Mobile Contact Button */
+  --mobile-contact-active-transform: translateY(-2px) scale(1.02);
+  --mobile-contact-active-duration: 0.1s;
+}
+
+.mobile-contact-button .secondary-button:active {
+  transform: var(--mobile-contact-active-transform);
+  transition-duration: var(--mobile-contact-active-duration);
+}
+
+.mobile-contact-button .secondary-button:focus-visible {
+  outline: 3px solid rgba(255, 153, 0, 0.5);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   MOBILE RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+@media (max-width: 1080px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .homepage-nav .nav-container,
+  .project-nav .nav-container,
+  .simple-nav .nav-container {
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+  }
+  
+  .project-nav-controls {
+    display: none;
+  }
+  
+  .nav-right-section {
+    display: none;
+  }
+  
+  /* Optimize navigation container for mobile */
+  .nav-container {
+    min-width: auto;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/* Tablet landscape adjustments */
+@media (max-width: 1080px) and (min-width: 768px) {
+  .mobile-menu-content {
+    max-width: 500px;
+  }
+  
+  .mobile-nav-link {
+    font-size: 1.2rem;
+    padding: 1.2rem 2rem;
+  }
+  
+  .mobile-menu-content {
+    gap: 2rem;
+    /* max-width: 350px; */
+  }
+  
+  .mobile-nav-link {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .mobile-dropdown-toggle {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .mobile-dropdown-item {
+    font-size: 0.95rem;
+    padding: 0.9rem 1rem;
+  }
+  
+  .mobile-contact-button .secondary-button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Hide conflicting navigation elements */
+body:has(.unified-navigation) #sticky-header,
+body:has(.unified-navigation) header:not(.unified-navigation) {
+  display: none !important;
+}
+
+/* Ensure unified navigation takes precedence */
+.unified-navigation {
+  z-index: 1001 !important;
+}
